@@ -36,11 +36,26 @@
 </head>
 <body>
     <h1>Registro de Usuario</h1>
-    <s:form id="altaCarrera" action="altaCarrera" name="altaCarrera" method="post">
-        <s:textfield name="nombreCarrera" id="altaCarrera_nombreCarrera" label="Nombre de la carrera"/>
-        <s:textfield name="lugarCarrera" id="altaCarrera_lugarCarrera" label="Lugar de celebración"/>
-        <s:textfield name="fechaCelebracion" value="" id="altaCarrera_fechaCelebracion" label="Fecha de celebracion (dd/mm/yy)"/>
-        <s:submit id="altaCarrera_registrar" name="registrar" value="Registrar Carrera"/>
-    </s:form>
+    <form action="guardarUsuario.jsp" method="POST">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion"><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <input type="submit" value="Registrar">
+    </form>
 </body>
 </html>
