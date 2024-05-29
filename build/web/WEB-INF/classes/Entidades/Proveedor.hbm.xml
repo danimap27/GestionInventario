@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-may-2024 10:20:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Proveedor" table="proveedor" catalog="gestioninventario" optimistic-lock="version">
+        <id name="dni" type="string">
+            <column name="DNI" length="9" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="contacto" type="string">
+            <column name="contacto" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="15" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="nombreEmpresa" type="string">
+            <column name="nombre_empresa" />
+        </property>
+        <set name="productos" table="producto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DNI_Proveedor" length="9" />
+            </key>
+            <one-to-many class="Entidades.Producto" />
+        </set>
+    </class>
+</hibernate-mapping>

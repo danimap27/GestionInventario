@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-may-2024 10:20:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Pedidos" table="pedidos" catalog="gestioninventario" optimistic-lock="version">
+        <id name="idPedido" type="java.lang.Integer">
+            <column name="idPedido" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="Entidades.Cliente" fetch="select">
+            <column name="DNI_Cliente" length="9" />
+        </many-to-one>
+        <many-to-one name="producto" class="Entidades.Producto" fetch="select">
+            <column name="idProducto" />
+        </many-to-one>
+        <many-to-one name="vendedor" class="Entidades.Vendedor" fetch="select">
+            <column name="DNI_Vendedor" length="9" />
+        </many-to-one>
+        <property name="cantidad" type="int">
+            <column name="cantidad" not-null="true" />
+        </property>
+        <property name="precioUnitario" type="big_decimal">
+            <column name="precioUnitario" precision="10" not-null="true" />
+        </property>
+        <property name="fechaPedido" type="date">
+            <column name="fechaPedido" length="10" not-null="true" />
+        </property>
+        <property name="total" type="big_decimal">
+            <column name="total" precision="10" />
+        </property>
+        <property name="direccionEnvio" type="string">
+            <column name="direccionEnvio" />
+        </property>
+    </class>
+</hibernate-mapping>
