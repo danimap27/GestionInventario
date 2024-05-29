@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
+            background-image: url("source/fondoBackground.jpg");
             background-color: #f5f5f5;
         }
         .container {
@@ -41,13 +42,13 @@
         <s:form action="loginAction" method="post">
             <div class="form-group">
                 <label for="username">Usuario:</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <s:textfield class="form-control" id="username" name="username"/>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <s:password class="form-control" id="password" name="password" />
             </div>
-            <button type="submit" class="btn btn-primary">Entrar</button>
+                <s:submit type="submit" class="btn btn-primary" value="Entrar"/>
         </s:form>
     </div>
 </body>

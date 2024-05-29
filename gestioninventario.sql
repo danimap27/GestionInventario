@@ -46,6 +46,7 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `DNI` char(9) NOT NULL,
   `nombre` varchar(255) NOT NULL,
+  `usuario` char(20) NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -120,6 +121,7 @@ DROP TABLE IF EXISTS `proveedor`;
 CREATE TABLE `proveedor` (
   `DNI` char(9) NOT NULL,
   `nombre` varchar(255) NOT NULL,
+  `usuario` char(20) NOT NULL,
   `contacto` varchar(255) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -136,8 +138,21 @@ DROP TABLE IF EXISTS `vendedor`;
 CREATE TABLE `vendedor` (
   `DNI` char(9) NOT NULL,
   `nombre` varchar(255) NOT NULL,
+  `usuario` char(20) NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE `usuario` (
+  `usuario` char(20) NOT NULL,
+  `password` varchar(100) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -155,6 +170,12 @@ ALTER TABLE `almacen`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`DNI`);
+
+--
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `usuaio`
+  ADD PRIMARY KEY (`usuario`);
 
 --
 -- Indices de la tabla `historialpedidos`
