@@ -4,6 +4,7 @@
 
 <struts>
     <!-- Configuration for the default package. -->
+    <constant name="struts.ui.theme" value="simple"/>
     <package name="default" extends="struts-default">
         
     </package>
