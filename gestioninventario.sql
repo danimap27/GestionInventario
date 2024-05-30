@@ -149,11 +149,22 @@ CREATE TABLE `vendedor` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
-  `usuario` char(20) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `usuario` varchar(100) CHARACTER SET armscii8 COLLATE armscii8_bin NOT NULL,
+  `password` varchar(100) CHARACTER SET armscii8 COLLATE armscii8_bin NOT NULL,
+  `rol` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`usuario`);
+COMMIT;
 
 --
 -- Índices para tablas volcadas
@@ -170,12 +181,6 @@ ALTER TABLE `almacen`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`DNI`);
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `usuaio`
-  ADD PRIMARY KEY (`usuario`);
 
 --
 -- Indices de la tabla `historialpedidos`
