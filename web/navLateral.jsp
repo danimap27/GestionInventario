@@ -50,7 +50,7 @@
                         <span class="zmdi zmdi-chevron-left"></span>
                     </a>
                     <ul class="full-width menu-principal sub-menu-options">
-                        <li class="full-width">
+                        <%--<li class="full-width">
                             <a href="companyias.jsp" class="full-width">
                                 <div class="navLateral-body-cl">
                                     <i class="zmdi zmdi-balance"></i>
@@ -59,7 +59,7 @@
                                     COMPA&Ntilde;IAS
                                 </div>
                             </a>
-                        </li>
+                        </li>--%>
                         <li class="full-width">
                             <a href="proveedores.jsp" class="full-width">
                                 <div class="navLateral-body-cl">
