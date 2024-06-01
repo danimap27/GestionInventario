@@ -4,7 +4,7 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: descripción
+                        TODO: descripci�n
                     </p>
                 </div>
             </section>
@@ -43,78 +43,54 @@
                                     Nuevo Administrador
                                 </div>
                                 <div class="full-width panel-content">
-                                    <form>
+                                    <s:form action="registerAction" method="POST">
                                         <div class="mdl-grid">
                                             <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
                                                 <h5 class="text-condensedLight">Datos Administrador</h5>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIAdmin">
+                                                    <s:textfield cssClass="mdl-textfield__input" type="number" key="DNIAdmin" id="DNIAdmin" name="DNIAdmin" />
                                                     <label class="mdl-textfield__label" for="DNIAdmin">DNI</label>
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
+                                                    <s:textfield cssClass="mdl-textfield__input" key="NameAdmin" id="NameAdmin" name="NameAdmin" />
                                                     <label class="mdl-textfield__label" for="NameAdmin">Nombre</label>
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+                                                    <s:textfield cssClass="mdl-textfield__input" key="LastNameAdmin" id="LastNameAdmin" name="LastNameAdmin" />
                                                     <label class="mdl-textfield__label" for="LastNameAdmin">Apellidos</label>
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin">
+                                                    <s:textfield cssClass="mdl-textfield__input" type="tel" key="phoneAdmin" id="phoneAdmin" name="phoneAdmin" />
                                                     <label class="mdl-textfield__label" for="phoneAdmin">Telefono</label>
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="email" id="emailAdmin">
+                                                    <s:textfield cssClass="mdl-textfield__input" type="email" key="emailAdmin" id="emailAdmin" name="emailAdmin" />
                                                     <label class="mdl-textfield__label" for="emailAdmin">E-mail</label>
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text" id="addressAdmin">
-                                                    <label class="mdl-textfield__label" for="addressAdmin">Direci&oacute;n</label>
+                                                    <s:textfield cssClass="mdl-textfield__input" key="addressAdmin" id="addressAdmin" name="addressAdmin" />
+                                                    <label class="mdl-textfield__label" for="addressAdmin">Direcci�n</label>
                                                 </div>
                                             </div>
                                             <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
                                                 <h5 class="text-condensedLight">Cuenta</h5>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+                                                    <s:textfield cssClass="mdl-textfield__input" key="UserNameAdmin" id="UserNameAdmin" name="UserNameAdmin" />
                                                     <label class="mdl-textfield__label" for="UserNameAdmin">Usuario</label>
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <input class="mdl-textfield__input" type="password" id="passwordAdmin">
+                                                    <s:password cssClass="mdl-textfield__input" key="passwordAdmin" id="passwordAdmin" name="passwordAdmin" />
                                                     <label class="mdl-textfield__label" for="passwordAdmin">Password</label>
                                                 </div>
-                                                <h5 class="text-condensedLight">Elige Avatar</h5>
-                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                                                    <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="avatar-male.png">
-                                                    <img src="assets/img/avatar-male.png" alt="avatar" style="height: 45px; width: 45px; ">
-                                                    <span class="mdl-radio__label">Avatar 1</span>
-                                                </label>
-                                                <br><br>
-                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                                                    <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="avatar-female.png">
-                                                    <img src="assets/img/avatar-female.png" alt="avatar" style="height: 45px; width: 45px; ">
-                                                    <span class="mdl-radio__label">Avatar 2</span>
-                                                </label>
-                                                <br><br>
-                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                                                    <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="avatar-male2.png">
-                                                    <img src="assets/img/avatar-male2.png" alt="avatar" style="height: 45px; width: 45px; ">
-                                                    <span class="mdl-radio__label">Avatar 3</span>
-                                                </label>
-                                                <br><br>
-                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-                                                    <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="avatar-female2.png">
-                                                    <img src="assets/img/avatar-female2.png" alt="avatar" style="height: 45px; width: 45px; ">
-                                                    <span class="mdl-radio__label">Avatar 4</span>
-                                                </label>
                                             </div>
                                         </div>
                                         <p class="text-center">
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addAdmin">A&ntilde;adir Administrador</div>
+                                        <div class="mdl-tooltip" for="btn-addAdmin">A�adir Administrador</div>
                                         </p>
-                                    </form>
+                                    </s:form>
                                 </div>
                             </div>
                         </div>

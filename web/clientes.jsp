@@ -4,7 +4,7 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: descripción
+                        TODO: descripci�n
                     </p>
                 </div>
             </section>
@@ -43,43 +43,43 @@
                                     Nuevo Cliente
                                 </div>
                                 <div class="full-width panel-content">
-                                    <form>
+                                    <s:form>
                                         <h5 class="text-condensedLight">Datos cliente</h5>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient">
+                                            <s:textfield cssClass="mdl-textfield__input" type="number" key="DNIClient" id="DNIClient" name="DNIClient" />
                                             <label class="mdl-textfield__label" for="DNIClient">DNI</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameClient">
+                                            <s:textfield cssClass="mdl-textfield__input" key="NameClient" id="NameClient" name="NameClient" />
                                             <label class="mdl-textfield__label" for="NameClient">Nombre</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameClient">
+                                            <s:textfield cssClass="mdl-textfield__input" key="LastNameClient" id="LastNameClient" name="LastNameClient" />
                                             <label class="mdl-textfield__label" for="LastNameClient">Last Name</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" id="addressClient1">
+                                            <s:textfield cssClass="mdl-textfield__input" key="addressClient1" id="addressClient1" name="addressClient1" />
                                             <label class="mdl-textfield__label" for="addressClient1">Direccion</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" id="TODO">
+                                            <s:textfield cssClass="mdl-textfield__input" key="TODO" id="TODO" name="TODO" />
                                             <label class="mdl-textfield__label" for="TODO">TODO</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient">
+                                            <s:textfield cssClass="mdl-textfield__input" type="tel" key="phoneClient" id="phoneClient" name="phoneClient" />
                                             <label class="mdl-textfield__label" for="phoneClient">Telefono</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="email" id="emailClient">
+                                            <s:textfield cssClass="mdl-textfield__input" type="email" key="emailClient" id="emailClient" name="emailClient" />
                                             <label class="mdl-textfield__label" for="emailClient">E-mail</label>
                                         </div>
                                         <p class="text-center">
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addClient">A&ntilde;adir cliente</div>
+                                        <div class="mdl-tooltip" for="btn-addClient">A�adir cliente</div>
                                         </p>
-                                    </form>
+                                    </s:form>
                                 </div>
                             </div>
                         </div>

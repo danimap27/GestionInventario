@@ -4,7 +4,7 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: descripción
+                        TODO: descripci�n
                     </p>
                 </div>
             </section>
@@ -43,23 +43,23 @@
                                     Nueva categoria
                                 </div>
                                 <div class="full-width panel-content">
-                                    <form>
+                                    <s:form>
                                         <h5 class="text-condensedLight">Datos Categoria</h5>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameCategory">
+                                            <s:textfield cssClass="mdl-textfield__input" key="NameCategory" id="NameCategory" name="NameCategory" />
                                             <label class="mdl-textfield__label" for="NameCategory">Nombre</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="descriptionCategory">
-                                            <label class="mdl-textfield__label" for="descriptionCategory">Descripci&oacute;n</label>
+                                            <s:textfield cssClass="mdl-textfield__input" key="descriptionCategory" id="descriptionCategory" name="descriptionCategory" />
+                                            <label class="mdl-textfield__label" for="descriptionCategory">Descripci�n</label>
                                         </div>
                                         <p class="text-center">
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCategory">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addCategory">A&ntilde;adir categoria</div>
+                                        <div class="mdl-tooltip" for="btn-addCategory">A�adir categoria</div>
                                         </p>
-                                    </form>
+                                    </s:form>
                                 </div>
                             </div>
                         </div>

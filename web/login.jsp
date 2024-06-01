@@ -4,7 +4,6 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
@@ -19,9 +18,17 @@
             </p>
             <p class="text-center text-condensedLight">Entrar en tu cuenta</p>
             <s:form action="home.jsp" method="POST">
-                <s:textfield class="mdl-textfield__input" id="userName" label="Usuario"/>
-                    <s:textfield class="mdl-textfield__input" type="password" id="pass"/>
-                <s:submit type="submit" id="SingIn"  class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; "/>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <s:textfield cssClass="mdl-textfield__input" key="userName" id="userName" name="userName" />
+                    <label class="mdl-textfield__label" for="userName">Usuario</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <s:password cssClass="mdl-textfield__input" key="pass" id="pass" name="pass" />
+                    <label class="mdl-textfield__label" for="pass">Password</label>
+                </div>
+                <button id="SignIn" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;">
+                    Sign in <i class="zmdi zmdi-mail-send"></i>
+                </button>
             </s:form>
         </div>
     </body>
