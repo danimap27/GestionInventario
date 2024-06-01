@@ -1,27 +1,33 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 29-may-2024 10:20:16 by Hibernate Tools 4.3.1 -->
+<!-- Generated 01-jun-2024 17:02:32 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Entidades.Cliente" table="cliente" catalog="gestioninventario" optimistic-lock="version">
+    <class name="Entidades.Cliente" table="cliente" catalog="gestioninventbd" optimistic-lock="version">
         <id name="dni" type="string">
-            <column name="DNI" length="9" />
+            <column name="dni" length="10" />
             <generator class="assigned" />
         </id>
         <property name="nombre" type="string">
-            <column name="nombre" not-null="true" />
+            <column name="nombre" length="50" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="50" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="100" />
         </property>
         <property name="telefono" type="string">
             <column name="telefono" length="15" />
         </property>
         <property name="email" type="string">
-            <column name="email" />
+            <column name="email" length="50" />
         </property>
-        <set name="pedidoses" table="pedidos" inverse="true" lazy="true" fetch="select">
+        <set name="ventas" table="venta" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="DNI_Cliente" length="9" />
+                <column name="cliente_dni" length="10" />
             </key>
-            <one-to-many class="Entidades.Pedidos" />
+            <one-to-many class="Entidades.Venta" />
         </set>
     </class>
 </hibernate-mapping>

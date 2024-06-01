@@ -3,19 +3,16 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 01-jun-2024 17:02:32 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Entidades.Cliente" table="cliente" catalog="gestioninventbd" optimistic-lock="version">
+    <class name="Entidades.Administrador" table="administrador" catalog="gestioninventbd" optimistic-lock="version">
         <id name="dni" type="string">
-            <column name="dni" length="10" />
+            <column name="DNI" length="10" />
             <generator class="assigned" />
         </id>
         <property name="nombre" type="string">
             <column name="nombre" length="50" not-null="true" />
         </property>
-        <property name="apellido" type="string">
-            <column name="apellido" length="50" not-null="true" />
-        </property>
-        <property name="direccion" type="string">
-            <column name="direccion" length="100" />
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="50" not-null="true" />
         </property>
         <property name="telefono" type="string">
             <column name="telefono" length="15" />
@@ -23,11 +20,8 @@
         <property name="email" type="string">
             <column name="email" length="50" />
         </property>
-        <set name="ventas" table="venta" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="cliente_dni" length="10" />
-            </key>
-            <one-to-many class="Entidades.Venta" />
-        </set>
+        <property name="direccion" type="string">
+            <column name="direccion" length="100" />
+        </property>
     </class>
 </hibernate-mapping>

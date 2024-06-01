@@ -1,5 +1,5 @@
 package Entidades;
-// Generated 29-may-2024 10:20:15 by Hibernate Tools 4.3.1
+// Generated 01-jun-2024 17:02:32 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,24 +13,29 @@ public class Cliente  implements java.io.Serializable {
 
      private String dni;
      private String nombre;
+     private String apellido;
+     private String direccion;
      private String telefono;
      private String email;
-     private Set pedidoses = new HashSet(0);
+     private Set ventas = new HashSet(0);
 
     public Cliente() {
     }
 
 	
-    public Cliente(String dni, String nombre) {
+    public Cliente(String dni, String nombre, String apellido) {
         this.dni = dni;
         this.nombre = nombre;
+        this.apellido = apellido;
     }
-    public Cliente(String dni, String nombre, String telefono, String email, Set pedidoses) {
+    public Cliente(String dni, String nombre, String apellido, String direccion, String telefono, String email, Set ventas) {
        this.dni = dni;
        this.nombre = nombre;
+       this.apellido = apellido;
+       this.direccion = direccion;
        this.telefono = telefono;
        this.email = email;
-       this.pedidoses = pedidoses;
+       this.ventas = ventas;
     }
    
     public String getDni() {
@@ -47,6 +52,20 @@ public class Cliente  implements java.io.Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    public String getApellido() {
+        return this.apellido;
+    }
+    
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    public String getDireccion() {
+        return this.direccion;
+    }
+    
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
     public String getTelefono() {
         return this.telefono;
     }
@@ -61,12 +80,12 @@ public class Cliente  implements java.io.Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Set getPedidoses() {
-        return this.pedidoses;
+    public Set getVentas() {
+        return this.ventas;
     }
     
-    public void setPedidoses(Set pedidoses) {
-        this.pedidoses = pedidoses;
+    public void setVentas(Set ventas) {
+        this.ventas = ventas;
     }
 
 
