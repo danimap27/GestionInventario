@@ -36,7 +36,9 @@ CREATE TABLE `administrador` (
   `apellidos` varchar(50) NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `direccion` varchar(100) DEFAULT NULL
+  `direccion` varchar(100) DEFAULT NULL,  
+  `usuario` varchar(50) NOT NULL,
+  `contrasenya_hash` varchar(50) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

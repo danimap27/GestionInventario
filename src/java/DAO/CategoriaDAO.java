@@ -9,6 +9,7 @@ package DAO;
  *
  * @author Dani
  */
+import Entidades.Categoria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;

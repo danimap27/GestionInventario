@@ -43,7 +43,7 @@
                                     Nuevo Administrador
                                 </div>
                                 <div class="full-width panel-content">
-                                    <s:form action="registerAction" method="POST">
+                                    <s:form action="addAdministrador" method="POST">
                                         <div class="mdl-grid">
                                             <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
                                                 <h5 class="text-condensedLight">Datos Administrador</h5>
