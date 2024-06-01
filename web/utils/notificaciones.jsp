@@ -10,7 +10,7 @@
                     <i class="zmdi zmdi-circle"></i>
                     <strong>Nuevo registro</strong> 
                     <br>
-                    <small>Ahota</small>
+                    <small>Ahora</small>
                 </p>
             </div>
             <div class="mdl-tooltip mdl-tooltip--left" for="notifation-unread-1">Notification as UnRead</div> 

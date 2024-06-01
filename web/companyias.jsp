@@ -4,7 +4,7 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -45,12 +45,12 @@
                                     <label class="mdl-textfield__label" for="DNICompany">DNI</label>
                                 </div>
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9Ã¡Ã©Ã­Ã³ÃºÃÃ‰ÃÃ“Ãš ]*(\.[0-9]+)?" id="NameCompany">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameCompany">
                                     <label class="mdl-textfield__label" for="NameCompany">Nombre</label>
                                 </div>
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                     <input class="mdl-textfield__input" type="text" id="addressCompany">
-                                    <label class="mdl-textfield__label" for="addressCompany">DireccÂ´&iacute;</label>
+                                    <label class="mdl-textfield__label" for="addressCompany">Direcc´&iacute;</label>
                                 </div>
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                     <input class="mdl-textfield__input" type="email" id="emailCompany">

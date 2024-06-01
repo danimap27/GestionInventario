@@ -4,11 +4,11 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Productos</title>
+        <title>Proveedores</title>
         <%@include file="utils/importaciones.jsp" %>
     </head>
     <body>
@@ -43,39 +43,39 @@
                                     Nuevo Proveedor
                                 </div>
                                 <div class="full-width panel-content">
-                                    <form>
+                                    <s:form action="addProvider" method="POST">
                                         <h5 class="text-condensedLight">Datos Proveedor</h5>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIProvider">
+                                            <s:textfield cssClass="mdl-textfield__input" key="DNIProvider" name="DNIProvider" id="DNIProvider" />
                                             <label class="mdl-textfield__label" for="DNIProvider">DNI</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9 ]*(\.[0-9]+)?" id="NameProvider">
+                                            <s:textfield cssClass="mdl-textfield__input" key="NameProvider" name="NameProvider" id="NameProvider" />
                                             <label class="mdl-textfield__label" for="NameProvider">Nombre</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" id="addressProvider">
+                                            <s:textfield cssClass="mdl-textfield__input" key="addressProvider" name="addressProvider" id="addressProvider" />
                                             <label class="mdl-textfield__label" for="addressProvider">Direccion</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneProvider">
+                                            <s:textfield cssClass="mdl-textfield__input" key="phoneProvider" name="phoneProvider" id="phoneProvider" />
                                             <label class="mdl-textfield__label" for="phoneProvider">Numero</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="email" id="emailProvider">
+                                            <s:textfield cssClass="mdl-textfield__input" key="emailProvider" name="emailProvider" id="emailProvider" />
                                             <label class="mdl-textfield__label" for="emailProvider">E-mail</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" id="webProvider">
+                                            <s:textfield cssClass="mdl-textfield__input" key="webProvider" name="webProvider" id="webProvider" />
                                             <label class="mdl-textfield__label" for="webProvider">Web</label>
                                         </div>
                                         <p class="text-center">
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProvider">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addProvider">A&ntilde;adir proveedor</div>
+                                        <div class="mdl-tooltip" for="btn-addProvider">Añadir proveedor</div>
                                         </p>
-                                    </form>
+                                    </s:form>
                                 </div>
                             </div>
                         </div>
