@@ -9,15 +9,15 @@
 <html lang="es">
     <head>
         <title>Clientes</title>
-        <%@include file="importaciones.jsp" %>
+        <%@include file="utils/importaciones.jsp" %>
     </head>
     <body>
         <%-- Notificaciones TODO--%>
-        <%@include file="notificaciones.jsp" %>
+        <%@include file="utils/notificaciones.jsp" %>
         <%-- navBar --%>
-        <%@include file="navBar.jsp" %>
+        <%@include file="utils/navBar.jsp" %>
         <%-- navLat --%>
-        <%@include file="navLateral.jsp" %>
+        <%@include file="utils/navLateral.jsp" %>
         <!-- pageContent -->
         <section class="full-width pageContent">
             <section class="full-width header-well">
