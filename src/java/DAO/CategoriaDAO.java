@@ -9,12 +9,14 @@ package DAO;
  *
  * @author Dani
  */
-import entidades.Categoria;
+import Entidades.Categoria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
+import Entidades.HibernateUtil;
+
 
 public class CategoriaDAO {
 

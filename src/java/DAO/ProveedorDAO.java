@@ -9,10 +9,12 @@ package DAO;
  *
  * @author Dani
  */
-import entidades.Proveedor;
+import Entidades.Proveedor;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
+import Entidades.HibernateUtil;
+
 
 public class ProveedorDAO {
     private Session session;

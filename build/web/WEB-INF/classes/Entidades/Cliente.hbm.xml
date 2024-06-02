@@ -1,33 +1,32 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2024 10:50:09 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2024 18:31:30 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="entidades.Cliente" table="cliente" catalog="gestioninventbd" optimistic-lock="version">
-        <id name="dni" type="string">
-            <column name="dni" length="10" />
-            <generator class="assigned" />
-        </id>
-        <property name="nombre" type="string">
-            <column name="nombre" length="50" not-null="true" />
-        </property>
-        <property name="apellido" type="string">
-            <column name="apellido" length="50" not-null="true" />
-        </property>
-        <property name="direccion" type="string">
-            <column name="direccion" length="100" />
-        </property>
-        <property name="telefono" type="string">
-            <column name="telefono" length="15" />
-        </property>
-        <property name="email" type="string">
-            <column name="email" length="50" />
-        </property>
-        <set name="ventas" table="venta" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="cliente_dni" length="10" />
-            </key>
-            <one-to-many class="entidades.Venta" />
-        </set>
-    </class>
+  <class catalog="gestioninventbd" name="Entidades.Cliente" optimistic-lock="version" table="cliente">
+    <id name="dni" type="string">
+      <column length="10" name="dni"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="nombre" type="string">
+      <column length="50" name="nombre" not-null="true"/>
+    </property>
+    <property name="apellido" type="string">
+      <column length="50" name="apellido" not-null="true"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="100" name="direccion"/>
+    </property>
+    <property name="telefono" type="string">
+      <column length="15" name="telefono"/>
+    </property>
+    <property name="email" type="string">
+      <column length="50" name="email"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="ventas" table="venta">
+      <key>
+        <column length="10" name="cliente_dni"/>
+      </key>
+      <one-to-many class="Entidades.Venta"/>
+    </set>
+  </class>
 </hibernate-mapping>

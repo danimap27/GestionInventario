@@ -9,11 +9,12 @@ package DAO;
  *
  * @author Dani
  */
-import entidades.Administrador;
+import Entidades.Administrador;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
 import org.hibernate.Query;
+import Entidades.HibernateUtil;
 
 public class AdministradorDAO {
 

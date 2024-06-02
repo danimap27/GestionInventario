@@ -9,10 +9,12 @@ package DAO;
  *
  * @author Dani
  */
-import entidades.Productos;
+import Entidades.Productos;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
+import Entidades.HibernateUtil;
+
 
 public class ProductoDAO {
     private Session session;
