@@ -1,21 +1,20 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2024 10:50:09 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2024 18:31:30 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="entidades.Categoria" table="categoria" catalog="gestioninventbd" optimistic-lock="version">
-        <id name="nombre" type="string">
-            <column name="nombre" length="50" />
-            <generator class="assigned" />
-        </id>
-        <property name="descripcion" type="string">
-            <column name="descripcion" length="65535" />
-        </property>
-        <set name="productoses" table="productos" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="categoria_nombre" length="50" />
-            </key>
-            <one-to-many class="entidades.Productos" />
-        </set>
-    </class>
+  <class catalog="gestioninventbd" name="Entidades.Categoria" optimistic-lock="version" table="categoria">
+    <id name="nombre" type="string">
+      <column length="50" name="nombre"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="descripcion" type="string">
+      <column length="65535" name="descripcion"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="productoses" table="productos">
+      <key>
+        <column length="50" name="categoria_nombre"/>
+      </key>
+      <one-to-many class="Entidades.Productos"/>
+    </set>
+  </class>
 </hibernate-mapping>
