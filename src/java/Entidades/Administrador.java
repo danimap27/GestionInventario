@@ -1,5 +1,5 @@
-package entidades;
-// Generated 02-jun-2024 10:50:08 by Hibernate Tools 4.3.1
+package Entidades;
+// Generated 02-jun-2024 18:31:30 by Hibernate Tools 4.3.1
 
 
 
@@ -15,23 +15,29 @@ public class Administrador  implements java.io.Serializable {
      private String telefono;
      private String email;
      private String direccion;
+     private String usuario;
+     private String contrasenyaHash;
 
     public Administrador() {
     }
 
 	
-    public Administrador(String dni, String nombre, String apellidos) {
+    public Administrador(String dni, String nombre, String apellidos, String usuario, String contrasenyaHash) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.usuario = usuario;
+        this.contrasenyaHash = contrasenyaHash;
     }
-    public Administrador(String dni, String nombre, String apellidos, String telefono, String email, String direccion) {
+    public Administrador(String dni, String nombre, String apellidos, String telefono, String email, String direccion, String usuario, String contrasenyaHash) {
        this.dni = dni;
        this.nombre = nombre;
        this.apellidos = apellidos;
        this.telefono = telefono;
        this.email = email;
        this.direccion = direccion;
+       this.usuario = usuario;
+       this.contrasenyaHash = contrasenyaHash;
     }
    
     public String getDni() {
@@ -75,6 +81,20 @@ public class Administrador  implements java.io.Serializable {
     
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+    public String getUsuario() {
+        return this.usuario;
+    }
+    
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public String getContrasenyaHash() {
+        return this.contrasenyaHash;
+    }
+    
+    public void setContrasenyaHash(String contrasenyaHash) {
+        this.contrasenyaHash = contrasenyaHash;
     }
 
 
