@@ -43,7 +43,7 @@
                                     Nuevo Cliente
                                 </div>
                                 <div class="full-width panel-content">
-                                    <s:form>
+                                    <s:form action="addCliente" method="POST">
                                         <h5 class="text-condensedLight">Datos cliente</h5>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                             <s:textfield cssClass="mdl-textfield__input" type="number" key="DNIClient" id="DNIClient" name="DNIClient" />

@@ -3,8 +3,8 @@
     Created on : 12-may-2024, 20:26:17
     Author     : Dani
 --%>
-
 <%@taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>

@@ -6,6 +6,9 @@
     <!-- Configuration for the default package. -->
     <constant name="struts.ui.theme" value="simple"/>
     <package name="default" extends="struts-default">
-        
+        <action name="addAdministrador" class="Actions.addAdministrador">
+            <result name="success">/administradores.jsp</result>
+            <result name="error">/administradores.jsp</result>
+        </action>
     </package>
 </struts>
