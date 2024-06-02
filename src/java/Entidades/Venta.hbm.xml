@@ -1,24 +1,23 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2024 10:50:09 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2024 18:31:30 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="entidades.Venta" table="venta" catalog="gestioninventbd" optimistic-lock="version">
-        <id name="id" type="java.lang.Integer">
-            <column name="id" />
-            <generator class="identity" />
-        </id>
-        <many-to-one name="cliente" class="entidades.Cliente" fetch="select">
-            <column name="cliente_dni" length="10" />
-        </many-to-one>
-        <many-to-one name="pago" class="entidades.Pago" fetch="select">
-            <column name="pago_id" />
-        </many-to-one>
-        <property name="total" type="big_decimal">
-            <column name="total" precision="10" not-null="true" />
-        </property>
-        <property name="opciones" type="string">
-            <column name="opciones" length="65535" />
-        </property>
-    </class>
+  <class catalog="gestioninventbd" name="Entidades.Venta" optimistic-lock="version" table="venta">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="Entidades.Cliente" fetch="select" name="cliente">
+      <column length="10" name="cliente_dni"/>
+    </many-to-one>
+    <many-to-one class="Entidades.Pago" fetch="select" name="pago">
+      <column name="pago_id"/>
+    </many-to-one>
+    <property name="total" type="big_decimal">
+      <column name="total" not-null="true" precision="10"/>
+    </property>
+    <property name="opciones" type="string">
+      <column length="65535" name="opciones"/>
+    </property>
+  </class>
 </hibernate-mapping>
