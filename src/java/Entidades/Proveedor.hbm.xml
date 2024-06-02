@@ -1,33 +1,32 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2024 10:50:09 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2024 18:31:30 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="entidades.Proveedor" table="proveedor" catalog="gestioninventbd" optimistic-lock="version">
-        <id name="id" type="java.lang.Integer">
-            <column name="id" />
-            <generator class="identity" />
-        </id>
-        <property name="nombre" type="string">
-            <column name="nombre" length="50" not-null="true" />
-        </property>
-        <property name="direccion" type="string">
-            <column name="direccion" length="100" />
-        </property>
-        <property name="numero" type="string">
-            <column name="numero" length="15" />
-        </property>
-        <property name="email" type="string">
-            <column name="email" length="50" />
-        </property>
-        <property name="web" type="string">
-            <column name="web" length="50" />
-        </property>
-        <set name="productoses" table="productos" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="proveedor_id" />
-            </key>
-            <one-to-many class="entidades.Productos" />
-        </set>
-    </class>
+  <class catalog="gestioninventbd" name="Entidades.Proveedor" optimistic-lock="version" table="proveedor">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="nombre" type="string">
+      <column length="50" name="nombre" not-null="true"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="100" name="direccion"/>
+    </property>
+    <property name="numero" type="string">
+      <column length="15" name="numero"/>
+    </property>
+    <property name="email" type="string">
+      <column length="50" name="email"/>
+    </property>
+    <property name="web" type="string">
+      <column length="50" name="web"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="productoses" table="productos">
+      <key>
+        <column name="proveedor_id"/>
+      </key>
+      <one-to-many class="Entidades.Productos"/>
+    </set>
+  </class>
 </hibernate-mapping>
