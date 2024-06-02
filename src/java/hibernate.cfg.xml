@@ -48,14 +48,14 @@ Contributor(s):
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
-    <mapping resource="entidades/Administrador.hbm.xml"/>
-    <mapping resource="entidades/Pago.hbm.xml"/>
-    <mapping resource="entidades/Productos.hbm.xml"/>
-    <mapping resource="entidades/Venta.hbm.xml"/>
-    <mapping resource="entidades/Compania.hbm.xml"/>
-    <mapping resource="entidades/Inventario.hbm.xml"/>
-    <mapping resource="entidades/Proveedor.hbm.xml"/>
-    <mapping resource="entidades/Cliente.hbm.xml"/>
-    <mapping resource="entidades/Categoria.hbm.xml"/>
+    <mapping resource="Entidades/Venta.hbm.xml"/>
+    <mapping resource="Entidades/Compania.hbm.xml"/>
+    <mapping resource="Entidades/Inventario.hbm.xml"/>
+    <mapping resource="Entidades/Proveedor.hbm.xml"/>
+    <mapping resource="Entidades/Categoria.hbm.xml"/>
+    <mapping resource="Entidades/Pago.hbm.xml"/>
+    <mapping resource="Entidades/Productos.hbm.xml"/>
+    <mapping resource="Entidades/Cliente.hbm.xml"/>
+    <mapping resource="Entidades/Administrador.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
