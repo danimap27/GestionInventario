@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2024 10:08:53 by Hibernate Tools 4.3.1 -->
+<!-- Generated 02-jun-2024 10:50:09 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Entidades.Productos" table="productos" catalog="gestioninventbd" optimistic-lock="version">
+    <class name="entidades.Productos" table="productos" catalog="gestioninventbd" optimistic-lock="version">
         <id name="codigo" type="int">
             <column name="codigo" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="categoria" class="Entidades.Categoria" fetch="select">
+        <many-to-one name="categoria" class="entidades.Categoria" fetch="select">
             <column name="categoria_nombre" length="50" />
         </many-to-one>
-        <many-to-one name="proveedor" class="Entidades.Proveedor" fetch="select">
+        <many-to-one name="proveedor" class="entidades.Proveedor" fetch="select">
             <column name="proveedor_id" />
         </many-to-one>
         <property name="nombre" type="string">
@@ -32,6 +32,6 @@
         <property name="otros" type="string">
             <column name="otros" length="65535" />
         </property>
-        <one-to-one name="inventario" class="Entidades.Inventario"></one-to-one>
+        <one-to-one name="inventario" class="entidades.Inventario"></one-to-one>
     </class>
 </hibernate-mapping>

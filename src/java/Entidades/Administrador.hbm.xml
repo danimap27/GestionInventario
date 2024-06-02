@@ -1,34 +1,27 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2024 10:08:53 by Hibernate Tools 4.3.1 -->
+<!-- Generated 02-jun-2024 10:50:09 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Entidades.Administrador" table="administrador" catalog="gestioninventbd" optimistic-lock="version">
-        <composite-id name="id" class="Entidades.AdministradorId">
-            <key-property name="dni" type="string">
-                <column name="DNI" length="10" />
-            </key-property>
-            <key-property name="nombre" type="string">
-                <column name="nombre" length="50" />
-            </key-property>
-            <key-property name="apellidos" type="string">
-                <column name="apellidos" length="50" />
-            </key-property>
-            <key-property name="telefono" type="string">
-                <column name="telefono" length="15" />
-            </key-property>
-            <key-property name="email" type="string">
-                <column name="email" length="50" />
-            </key-property>
-            <key-property name="direccion" type="string">
-                <column name="direccion" length="100" />
-            </key-property>
-            <key-property name="usuario" type="string">
-                <column name="usuario" length="50" />
-            </key-property>
-            <key-property name="contrasenyaHash" type="string">
-                <column name="contrasenya_hash" length="50" />
-            </key-property>
-        </composite-id>
+    <class name="entidades.Administrador" table="administrador" catalog="gestioninventbd" optimistic-lock="version">
+        <id name="dni" type="string">
+            <column name="DNI" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="50" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="15" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="100" />
+        </property>
     </class>
 </hibernate-mapping>

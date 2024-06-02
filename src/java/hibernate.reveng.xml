@@ -41,13 +41,13 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="gestioninventbd"/>
+  <table-filter match-name="compania"/>
   <table-filter match-name="venta"/>
   <table-filter match-name="categoria"/>
-  <table-filter match-name="administrador"/>
   <table-filter match-name="proveedor"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="administrador"/>
+  <table-filter match-name="inventario"/>
   <table-filter match-name="productos"/>
   <table-filter match-name="pago"/>
-  <table-filter match-name="cliente"/>
-  <table-filter match-name="compania"/>
-  <table-filter match-name="inventario"/>
 </hibernate-reverse-engineering>

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-jun-2024 10:08:53 by Hibernate Tools 4.3.1 -->
+<!-- Generated 02-jun-2024 10:50:09 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Entidades.Inventario" table="inventario" catalog="gestioninventbd" optimistic-lock="version">
+    <class name="entidades.Inventario" table="inventario" catalog="gestioninventbd" optimistic-lock="version">
         <id name="codigo" type="int">
             <column name="codigo" />
             <generator class="foreign">
                 <param name="property">productos</param>
             </generator>
         </id>
-        <one-to-one name="productos" class="Entidades.Productos" constrained="true"></one-to-one>
+        <one-to-one name="productos" class="entidades.Productos" constrained="true"></one-to-one>
         <property name="nombre" type="string">
             <column name="nombre" length="50" not-null="true" />
         </property>
