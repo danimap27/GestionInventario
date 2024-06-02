@@ -1,4 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <section class="full-width container-notifications">
     <div class="full-width container-notifications-bg btn-Notification"></div>
     <section class="NotificationArea">

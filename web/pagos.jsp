@@ -3,13 +3,13 @@
     Created on : 12-may-2024, 20:25:07
     Author     : Dani
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <title>Pagos</title>
-        <%@include file="utils/importaciones.jsp" %>
+        <%@include file="utils/importaciones.jsp"%>
     </head>
     <body>
         <%-- Notificaciones TODO--%>
@@ -56,7 +56,7 @@
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addPayment">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addPayment">Añadir pago</div>
+                                        <div class="mdl-tooltip" for="btn-addPayment">AÃ±adir pago</div>
                                         </p>
                                     </s:form>
                                 </div>

@@ -4,6 +4,7 @@
     Author     : Dani
 --%>
 <%@taglib prefix="s" uri="/struts-tags"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +27,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: descripción
+                        TODO: descripciÃ³n
                     </p>
                 </div>
             </section>
@@ -69,7 +70,7 @@
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                                     <s:textfield cssClass="mdl-textfield__input" key="addressAdmin" id="addressAdmin" name="addressAdmin" />
-                                                    <label class="mdl-textfield__label" for="addressAdmin">Dirección</label>
+                                                    <label class="mdl-textfield__label" for="addressAdmin">DirecciÃ³n</label>
                                                 </div>
                                             </div>
                                             <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
@@ -88,7 +89,7 @@
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addAdmin">Añadir Administrador</div>
+                                        <div class="mdl-tooltip" for="btn-addAdmin">AÃ±adir Administrador</div>
                                         </p>
                                     </s:form>
                                 </div>

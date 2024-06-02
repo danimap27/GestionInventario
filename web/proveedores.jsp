@@ -3,7 +3,7 @@
     Created on : 12-may-2024, 20:24:54
     Author     : Dani
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -73,7 +73,7 @@
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProvider">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addProvider">Añadir proveedor</div>
+                                        <div class="mdl-tooltip" for="btn-addProvider">AÃ±adir proveedor</div>
                                         </p>
                                     </s:form>
                                 </div>

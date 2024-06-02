@@ -3,13 +3,13 @@
     Created on : 12-may-2024, 20:27:31
     Author     : Dani
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Administradores</title>
-        <%@include file="utils/importaciones.jsp" %>
+        <%@include file="utils/importaciones.jsp"%>
     </head>
     <body>
         <%-- Notificaciones TODO--%>

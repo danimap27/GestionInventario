@@ -4,7 +4,6 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!--NAV bar-->
 <div class="full-width navBar">
     <div class="full-width navBar-options">

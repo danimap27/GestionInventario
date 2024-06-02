@@ -3,8 +3,9 @@
     Created on : 12-may-2024, 20:25:59
     Author     : Dani
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +27,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: descripción
+                        TODO: descripciÃ³n
                     </p>
                 </div>
             </section>
@@ -51,13 +52,13 @@
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                             <s:textfield cssClass="mdl-textfield__input" key="descriptionCategory" id="descriptionCategory" name="descriptionCategory" />
-                                            <label class="mdl-textfield__label" for="descriptionCategory">Descripción</label>
+                                            <label class="mdl-textfield__label" for="descriptionCategory">DescripciÃ³n</label>
                                         </div>
                                         <p class="text-center">
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCategory">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addCategory">Añadir categoria</div>
+                                        <div class="mdl-tooltip" for="btn-addCategory">AÃ±adir categoria</div>
                                         </p>
                                     </s:form>
                                 </div>

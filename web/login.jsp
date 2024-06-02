@@ -3,12 +3,12 @@
     Created on : 12-may-2024, 19:16:01
     Author     : Dani
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <%@include file="utils/importaciones.jsp" %>
+        <%@include file="utils/importaciones.jsp"%>
         <title>Login</title>
     </head>
     <body class="cover">

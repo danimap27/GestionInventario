@@ -3,13 +3,13 @@
     Created on : 12-may-2024, 20:26:33
     Author     : Dani
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <title>Clientes</title>
-        <%@include file="utils/importaciones.jsp" %>
+        <%@include file="utils/importaciones.jsp"%>
     </head>
     <body>
         <%-- Notificaciones TODO--%>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: descripción
+                        TODO: descripciÃ³n
                     </p>
                 </div>
             </section>
@@ -77,7 +77,7 @@
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addClient">Añadir cliente</div>
+                                        <div class="mdl-tooltip" for="btn-addClient">AÃ±adir cliente</div>
                                         </p>
                                     </s:form>
                                 </div>

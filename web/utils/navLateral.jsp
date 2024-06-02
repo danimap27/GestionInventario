@@ -4,7 +4,7 @@
     Author     : Dani
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!-- NAV Lateral -->
 <section class="full-width navLateral">
     <div class="full-width navLateral-bg btn-menu"></div>

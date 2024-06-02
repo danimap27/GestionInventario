@@ -3,12 +3,13 @@
     Created on : 12-may-2024, 20:26:48
     Author     : Dani
 --%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <title>Productos</title>
-        <%@include file="utils/importaciones.jsp" %>
+        <%@include file="utils/importaciones.jsp"%>
     </head>
     <body>
         <%-- Notificaciones TODO--%>
@@ -45,7 +46,7 @@
                                     <s:form method="POST" action="">
                                         <div class="mdl-grid">
                                             <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-                                                <h5 class="text-condensedLight">Informacion b·sica</h5>
+                                                <h5 class="text-condensedLight">Informacion b√°sica</h5>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                                     <s:textfield cssClass="mdl-textfield__input" type="number" key="BarCode" id="BarCode" name="BarCode" />
                                                     <label class="mdl-textfield__label" for="BarCode">Codigo</label>
@@ -103,7 +104,7 @@
                                             <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
                                                 <i class="zmdi zmdi-plus"></i>
                                             </button>
-                                        <div class="mdl-tooltip" for="btn-addProduct">AÒadir producto</div>
+                                        <div class="mdl-tooltip" for="btn-addProduct">A√±adir producto</div>
                                         </p>
                                     </s:form>
 
