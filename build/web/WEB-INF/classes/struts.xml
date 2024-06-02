@@ -14,5 +14,8 @@
             <result name="success">/categorias.jsp</result>
             <result name="error">/categorias.jsp</result>
         </action>
+         <action name="listarAdministradores" class="Actions.ListarAdministradoresAction">
+            <result name="success">/administradores.jsp</result>
+        </action>
     </package>
 </struts>

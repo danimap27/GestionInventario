@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="full-width panel-content">
                                     <%-- Crear accion para buscar administrador--%>
-                                    <form action="buscarAdministradorAction">
+                                    <s:form action="listarAdministradores" method="POST">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                                             <label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
                                                 <i class="zmdi zmdi-search"></i>
@@ -115,52 +115,20 @@
                                                 <label class="mdl-textfield__label"></label>
                                             </div>
                                         </div>
-                                    </form>
+                                    </s:form>
                                     <div class="mdl-list">
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                                <span>1. Nombre administrador</span>
-                                                <span class="mdl-list__item-sub-title">DNI</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                        </div>
-                                        <li class="full-width divider-menu-h"></li>
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                                <span>2. Nombre administrador</span>
-                                                <span class="mdl-list__item-sub-title">DNI</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                        </div>
-                                        <li class="full-width divider-menu-h"></li>
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                                <span>3. Nombre administrador</span>
-                                                <span class="mdl-list__item-sub-title">DNI</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                        </div>
-                                        <li class="full-width divider-menu-h"></li>
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                                <span>4. Nombre administrador</span>
-                                                <span class="mdl-list__item-sub-title">DNI</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                        </div>
-                                        <li class="full-width divider-menu-h"></li>
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                                <span>5. Nombre administrador</span>
-                                                <span class="mdl-list__item-sub-title">DNI</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                        </div>
+                                        <%-- Mostrar cada administrador --%>
+                                        <s:iterator value="administradores">
+                                            <div class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                                    <span><s:property value="nombre" /></span>
+                                                    <span class="mdl-list__item-sub-title"><s:property value="dni" /></span>
+                                                </span>
+                                                <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+                                            </div>
+                                            <li class="full-width divider-menu-h"></li>
+                                            </s:iterator>
                                     </div>
                                 </div>
                             </div>
@@ -168,6 +136,7 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </body>
+        </div>
+    </section>
+</body>
 </html>
