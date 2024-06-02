@@ -6,6 +6,7 @@
 package Actions;
 
 import Entidades.Administrador;
+import com.opensymphony.xwork2.ActionSupport;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,7 +14,7 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 import org.apache.struts2.ServletActionContext;
 
-public class ListarAdministradoresAction {
+public class ListarAdministradoresAction extends ActionSupport{
 
     public String execute() {
         // Configurar la sesión de Hibernate
@@ -37,6 +38,6 @@ public class ListarAdministradoresAction {
         // Enviar la lista de administradores al formulario
         ServletActionContext.getRequest().setAttribute("administradores", administradores);
 
-        return "success";
+        return SUCCESS;
     }
 }
