@@ -43,7 +43,7 @@
                                     Nueva categoria
                                 </div>
                                 <div class="full-width panel-content">
-                                    <s:form>
+                                    <s:form action="addCategoria" method="POST">
                                         <h5 class="text-condensedLight">Datos Categoria</h5>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                             <s:textfield cssClass="mdl-textfield__input" key="NameCategory" id="NameCategory" name="NameCategory" />

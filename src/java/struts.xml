@@ -10,5 +10,9 @@
             <result name="success">/administradores.jsp</result>
             <result name="error">/administradores.jsp</result>
         </action>
+        <action name="addCategoria" class="Actions.addCategoria">
+            <result name="success">/categorias.jsp</result>
+            <result name="error">/categorias.jsp</result>
+        </action>
     </package>
 </struts>

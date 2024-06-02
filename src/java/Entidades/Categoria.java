@@ -50,9 +50,6 @@ public class Categoria  implements java.io.Serializable {
         this.productoses = productoses;
     }
 
-
-
-
 }
 
 

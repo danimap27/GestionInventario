@@ -10,7 +10,6 @@ package DAO;
  * @author Dani
  */
 import Entidades.Administrador;
-import Hibernate.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
