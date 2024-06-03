@@ -8,14 +8,26 @@
     <package name="default" extends="struts-default">
         <action name="addAdministrador" class="Actions.addAdministrador">
             <result name="success">/administradores.jsp</result>
-            <result name="error">/administradores.jsp</result>
+            <result name="error">/error.jsp</result>
         </action>
         <action name="addCategoria" class="Actions.addCategoria">
             <result name="success">/categorias.jsp</result>
+            <result name="input">/categorias.jsp</result>
             <result name="error">/categorias.jsp</result>
         </action>
-         <action name="listarAdministradores" class="Actions.ListarAdministradoresAction">
+        <action name="listarAdministradores" class="Actions.ListarAdministradoresAction">
             <result name="success">/administradores.jsp</result>
         </action>
+        <action name="addCliente" class="Actions.addCliente">
+            <result name="success">/clientes.jsp</result>
+            <result name="input">/clientes.jsp</result>
+            <result name="error">/clientes.jsp</result>
+        </action>
+        <action name="addPayment" class="Actions.addPago">
+            <result name="success">/pagos.jsp</result>
+            <result name="input">/pagos.jsp</result>
+            <result name="error">/pagos.jsp</result>
+        </action>
+
     </package>
 </struts>

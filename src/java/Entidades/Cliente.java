@@ -88,9 +88,6 @@ public class Cliente  implements java.io.Serializable {
         this.ventas = ventas;
     }
 
-
-
-
 }
 
 

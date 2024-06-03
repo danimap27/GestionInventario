@@ -7,9 +7,12 @@ package Actions;
 
 import DAO.AdministradorDAO;
 import Entidades.Administrador;
+import Entidades.HibernateUtil;
 import com.opensymphony.xwork2.ActionSupport;
+import org.hibernate.Session;
 
 public class addAdministrador extends ActionSupport {
+
     private String DNIAdmin;
     private String NameAdmin;
     private String LastNameAdmin;
@@ -21,7 +24,8 @@ public class addAdministrador extends ActionSupport {
 
     @Override
     public String execute() {
-        AdministradorDAO dao = new AdministradorDAO();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        AdministradorDAO dao = new AdministradorDAO(session);
 
         if (dao.obtenerAdministrador(DNIAdmin) != null) {
             addActionError("DNI ya existe");

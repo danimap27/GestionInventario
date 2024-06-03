@@ -12,7 +12,8 @@ package Actions;
 import com.opensymphony.xwork2.ActionSupport;
 import DAO.CategoriaDAO;
 import Entidades.Categoria;
-import java.util.List;
+import Entidades.HibernateUtil;
+import org.hibernate.Session;
 
 public class addCategoria extends ActionSupport {
     private String nameCategory;
@@ -36,25 +37,21 @@ public class addCategoria extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        CategoriaDAO dao = new CategoriaDAO(session);
+
+        Categoria c = new Categoria();
+        c.setNombre(nameCategory);
+        c.setDescripcion(descriptionCategory);
+
         try {
-            CategoriaDAO categoriaDAO = new CategoriaDAO();
-            
-            if (categoriaDAO.getCategoriaByName(nameCategory) != null) {
-                addActionError("Ya existe una categoría con el mismo nombre.");
-                return INPUT;
-            }
-            
-            // Si no existe, agregar la nueva categoría
-            Categoria categoria = new Categoria();
-            categoria.setNombre(nameCategory);
-            categoria.setDescripcion(descriptionCategory);
-            
-            categoriaDAO.addCategoria(categoria);
-            
+            dao.addCategoria(c);
             return SUCCESS;
         } catch (Exception e) {
             e.printStackTrace();
             return ERROR;
+        } finally {
+            session.close();
         }
     }
 }

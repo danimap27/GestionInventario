@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Categotias</title>
+        <title>Categorias</title>
         <%@include file="utils/importaciones.jsp" %>
     </head>
     <body>

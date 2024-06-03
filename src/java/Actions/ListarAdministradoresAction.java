@@ -5,39 +5,33 @@
  */
 package Actions;
 
-import Entidades.Administrador;
 import com.opensymphony.xwork2.ActionSupport;
+import DAO.AdministradorDAO;
+import Entidades.Administrador;
+import Entidades.HibernateUtil;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import java.util.List;
-import org.apache.struts2.ServletActionContext;
 
-public class ListarAdministradoresAction extends ActionSupport{
+public class ListarAdministradoresAction extends ActionSupport {
+    private List<Administrador> administradores;
 
+    public List<Administrador> getAdministradores() {
+        return administradores;
+    }
+
+    @Override
     public String execute() {
-        // Configurar la sesión de Hibernate
-        Configuration cfg = new Configuration();
-        cfg.configure("hibernate.cfg.xml");
-        SessionFactory factory = cfg.buildSessionFactory();
-        Session session = factory.openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        AdministradorDAO administradorDAO = new AdministradorDAO(session);
 
-        // Iniciar la transacción
-        Transaction t = session.beginTransaction();
-
-        // Obtener la lista de administradores desde la base de datos
-        List<Administrador> administradores = session.createQuery("FROM Administrador").list();
-
-        // Commit de la transacción
-        t.commit();
-
-        // Cerrar la sesión de Hibernate
-        session.close();
-
-        // Enviar la lista de administradores al formulario
-        ServletActionContext.getRequest().setAttribute("administradores", administradores);
-
-        return SUCCESS;
+        try {
+            administradores = administradorDAO.obtenerAdministradores();
+            return SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ERROR;
+        } finally {
+            session.close();
+        }
     }
 }
