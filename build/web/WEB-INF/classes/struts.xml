@@ -34,10 +34,22 @@
             </result>
         </action>
 
-        <action name="listarAdministradores2" class="Actions.ListarAdministradoresAction">
+        <action name="listarAdministradores2" class="Actions.ListarClientesAction">
             <result name="success">/administradores.jsp</result>
             <result name="input">/administradores.jsp</result>
             <result name="error">/administradores.jsp</result>
+        </action>
+        
+        <action name="listarClientes" class="com.opensymphony.xwork2.ActionSupport">
+            <result type="redirectAction">
+                <param name="actionName">listarClientes2</param>
+            </result>
+        </action>
+
+        <action name="listarClientes2" class="Actions.ListarClientesAction">
+            <result name="success">/clientes.jsp</result>
+            <result name="input">/clientes.jsp</result>
+            <result name="error">/clientes.jsp</result>
         </action>
     </package>
 </struts>
