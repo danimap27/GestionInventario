@@ -54,7 +54,7 @@
                                     Nuevo producto
                                 </div>
                                 <div class="full-width panel-content">
-                                    <s:form method="POST" action="">
+                                    <s:form method="POST" action="addProducto">
                                         <div class="mdl-grid">
                                             <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
                                                 <h5 class="text-condensedLight">Informacion básica</h5>
@@ -73,8 +73,8 @@
                                                     --%>
                                                 <h5 class="text-condensedLight">Stock y Precios</h5>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                    <s:textfield cssClass="mdl-textfield__input" type="number" key="StrockProduct" id="StrockProduct" name="StrockProduct" />
-                                                    <label class="mdl-textfield__label" for="StrockProduct">Stock</label>
+                                                    <s:textfield cssClass="mdl-textfield__input" type="number" key="StockProduct" id="StockProduct" name="StockProduct" />
+                                                    <label class="mdl-textfield__label" for="StockProduct">Stock</label>
                                                 </div>
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                                     <s:textfield cssClass="mdl-textfield__input" key="PriceProduct" id="PriceProduct" name="PriceProduct" />

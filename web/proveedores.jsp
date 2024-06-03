@@ -9,18 +9,7 @@
 <html lang="es">
     <head>
         <title>Proveedores</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/sweetalert2.css">
-        <link rel="stylesheet" href="css/material.min.css">
-        <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/material.min.js" ></script>
-        <script src="js/sweetalert2.min.js" ></script>
-        <script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
-        <script src="js/main.js" ></script>
+        <%@include file="/utils/importaciones.jsp" %>
     </head>
     <body>
         <%-- Notificaciones TODO--%>
@@ -54,12 +43,8 @@
                                     Nuevo Proveedor
                                 </div>
                                 <div class="full-width panel-content">
-                                    <s:form action="addProvider" method="POST">
+                                    <s:form action="addProveedor" method="POST">
                                         <h5 class="text-condensedLight">Datos Proveedor</h5>
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <s:textfield cssClass="mdl-textfield__input" key="DNIProvider" name="DNIProvider" id="DNIProvider" />
-                                            <label class="mdl-textfield__label" for="DNIProvider">DNI</label>
-                                        </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                             <s:textfield cssClass="mdl-textfield__input" key="NameProvider" name="NameProvider" id="NameProvider" />
                                             <label class="mdl-textfield__label" for="NameProvider">Nombre</label>

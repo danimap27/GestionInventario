@@ -53,7 +53,7 @@
                                     Nuevo M&eacute;todo de pago
                                 </div>
                                 <div class="full-width panel-content">
-                                    <s:form action="addPayment" method="POST">
+                                    <s:form action="addPago" method="POST">
                                         <h5 class="text-condensedLight">Datos de Pago</h5>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                             <s:textfield cssClass="mdl-textfield__input" key="namePayment" name="namePayment" id="NamePayment" />

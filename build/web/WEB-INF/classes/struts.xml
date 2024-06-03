@@ -81,5 +81,17 @@
             <result name="input">/proveedores.jsp</result>
             <result name="error">/proveedores.jsp</result>
         </action>
+        
+        <action name="addProveedor" class="Actions.addProveedor">
+            <result name="success">/proveedores.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+        <action name="addProducto" class="Actions.addProducto">
+            <result name="success">/productos.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/productos.jsp</result>
+        </action>
+
     </package>
 </struts>
