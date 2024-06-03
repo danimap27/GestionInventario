@@ -13,7 +13,7 @@
         <%@include file="utils/importaciones.jsp" %>
     </head>
     <body>
-        
+
         <%-- Notificaciones TODO--%>
         <%@include file="utils/notificaciones.jsp" %>
         <%-- navBar --%>
@@ -105,10 +105,29 @@
                                 <div class="full-width panel-tittle bg-success text-center tittles">
                                     Lista Administradores
                                 </div>
-                                
+
                                 <div class="full-width panel-content">
+                                    <s:form action="listarAdministradores" method="POST">
+                                        <div class="mdl-list"> 
+                                            <s:action name="listarAdministradores">
+                                                <%-- Mostrar cada administrador --%>
+                                                <s:iterator value="administradores">
+                                                    <div class="mdl-list__item mdl-list__item--two-line">
+                                                        <span class="mdl-list__item-primary-content">
+                                                            <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                                            <span><s:property value="nombre" /></span>
+                                                            <span class="mdl-list__item-sub-title"><s:property value="dni" /></span>
+                                                        </span>
+                                                        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+                                                    </div>
+                                                    <li class="full-width divider-menu-h"></li>
+                                                    </s:iterator>
+                                                </s:action>
+                                            <input class="mdl-textfield__input" type="submit" id="mostrarLista" value="Pulse para mostrar lista de Administradores">
+                                        </div>
+                                    </s:form>
                                     <%-- Crear accion para buscar administrador--%>
-                                   <s:form action="listarAdministradores" method="POST">
+                                    <s:form action="listarAdministradores" method="POST">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                                             <label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
                                                 <i class="zmdi zmdi-search"></i>
@@ -119,24 +138,6 @@
                                             </div>
                                         </div>
                                     </s:form>
-                                   
-                                    <div class="mdl-list"> 
-                                        <s:action name="listarAdministradores">
-                                             <%-- Mostrar cada administrador --%>
-                                        <s:iterator value="administradores">
-                                            <div class="mdl-list__item mdl-list__item--two-line">
-                                                <span class="mdl-list__item-primary-content">
-                                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                                    <span><s:property value="nombre" /></span>
-                                                    <span class="mdl-list__item-sub-title"><s:property value="dni" /></span>
-                                                </span>
-                                                <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                            </div>
-                                            <li class="full-width divider-menu-h"></li>
-                                            </s:iterator>
-                                            </s:action>
-                                       
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -145,6 +146,10 @@
             </div>
         </div>
     </section>
-                        
+    <script>
+        document.getElementById('mostrarLista').addEventListener('click', function () {
+            this.style.display = 'none';
+        });
+    </script>       
 </body>
 </html>
