@@ -105,9 +105,10 @@
                                 <div class="full-width panel-tittle bg-success text-center tittles">
                                     Lista Administradores
                                 </div>
+                                
                                 <div class="full-width panel-content">
                                     <%-- Crear accion para buscar administrador--%>
-                                    <s:form action="listarAdministradores" method="POST">
+                                   <s:form action="listarAdministradores" method="POST">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                                             <label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
                                                 <i class="zmdi zmdi-search"></i>
@@ -118,9 +119,10 @@
                                             </div>
                                         </div>
                                     </s:form>
-                                    <div class="mdl-list">
-                                        <s:action name="listarAdministradores" var="adminAction"/>
-                                        <%-- Mostrar cada administrador --%>
+                                   
+                                    <div class="mdl-list"> 
+                                        <s:action name="listarAdministradores">
+                                             <%-- Mostrar cada administrador --%>
                                         <s:iterator value="administradores">
                                             <div class="mdl-list__item mdl-list__item--two-line">
                                                 <span class="mdl-list__item-primary-content">
@@ -132,6 +134,8 @@
                                             </div>
                                             <li class="full-width divider-menu-h"></li>
                                             </s:iterator>
+                                            </s:action>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -141,5 +145,6 @@
             </div>
         </div>
     </section>
+                        
 </body>
 </html>
