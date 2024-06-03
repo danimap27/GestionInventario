@@ -111,6 +111,7 @@
                                                             <span><s:property value="nombre" /></span>
                                                             <span class="mdl-list__item-sub-title"><s:property value="email" /></span>
                                                             <span class="mdl-list__item-sub-title"><s:property value="web" /></span>
+                                                            <span class="mdl-list__item-sub-title"><s:property value="id" /></span>
                                                         </span>
                                                         <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
                                                     </div>
@@ -134,13 +135,13 @@
                                         </div>
                                     </s:form>
                                     <%-- Crear accion para buscar administrador--%>
-                                    <s:form action="obtenerClientePorDNI" method="POST">
+                                    <s:form action="obtenerProveedorPorID" method="POST">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchCliente">
+                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchProveedor">
                                                 <i class="zmdi zmdi-search"></i>
                                             </label>
                                             <div class="mdl-textfield__expandable-holder">
-                                                <input class="mdl-textfield__input" type="text" id="searchCliente" name="dni">
+                                                <input class="mdl-textfield__input" type="text" id="searchProveedor" name="id">
                                                 <label class="mdl-textfield__label"></label>
                                             </div>
 
@@ -149,8 +150,10 @@
                                     <span class="mdl-list__item-primary-content" style="display: flex; align-items: center; margin-top: 10px;">
                                         <i class="zmdi zmdi-account mdl-list__item-avatar" style="margin-right: 10px; font-size: 24px;"></i>
                                         <div style="flex-direction: column;">
-                                            <span style="font-weight: bold; font-size: 18px; color: #333;"><s:property value="clienteA.nombre" /></span>
-                                            <span class="mdl-list__item-sub-title" style="color: #666; font-size: 14px;"><s:property value="dni" /></span>
+                                            <span style="font-weight: bold; font-size: 18px; color: #333;"><s:property value="proveedorA.nombre" /></span>
+                                            <span class="mdl-list__item-sub-title" style="color: #666; font-size: 14px;"><s:property value="email" /></span>
+                                            <span class="mdl-list__item-sub-title" style="color: #666; font-size: 14px;"><s:property value="web" /></span>
+                                            <span class="mdl-list__item-sub-title" style="color: #666; font-size: 14px;"><s:property value="id" /></span>
                                         </div>
                                     </span>
                                 </div>

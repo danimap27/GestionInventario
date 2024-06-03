@@ -75,5 +75,11 @@
             <result name="input">/administradores.jsp</result>
             <result name="error">/administradores.jsp</result>
         </action>
+        
+        <action name="obtenerProveedorPorID" class="Actions.ListarProveedoresAction" method="obtenerProveedoresAction">
+            <result name="success">/proveedores.jsp</result>
+            <result name="input">/proveedores.jsp</result>
+            <result name="error">/proveedores.jsp</result>
+        </action>
     </package>
 </struts>

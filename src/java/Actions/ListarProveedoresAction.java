@@ -18,6 +18,24 @@ import java.util.List;
  */
 public class ListarProveedoresAction extends ActionSupport {
        private List<Proveedor> proveedores;
+       private Integer id;
+       private Proveedor proveedorA;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Proveedor getProveedorA() {
+        return proveedorA;
+    }
+
+    public void setProveedorA(Proveedor proveedorA) {
+        this.proveedorA = proveedorA;
+    }
 
     public List<Proveedor> getProveedores() {
         return proveedores;
@@ -34,6 +52,21 @@ public class ListarProveedoresAction extends ActionSupport {
 
         try {
             proveedores = proveedorDao.getAllProveedores();
+            return SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ERROR;
+        } finally {
+            session.close();
+        }
+    }
+    
+    public String obtenerProveedoresAction() throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        ProveedorDAO proveedorDao = new ProveedorDAO(session);
+
+        try {
+            proveedorA = proveedorDao.getProveedorByDni(id);
             return SUCCESS;
         } catch (Exception e) {
             e.printStackTrace();
