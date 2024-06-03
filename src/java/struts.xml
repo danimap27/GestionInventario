@@ -52,6 +52,18 @@
             <result name="error">/clientes.jsp</result>
         </action>
         
+        <action name="listarProveedores" class="com.opensymphony.xwork2.ActionSupport">
+            <result type="redirectAction">
+                <param name="actionName">listarProveedores2</param>
+            </result>
+        </action>
+
+        <action name="listarProveedores2" class="Actions.ListarProveedoresAction">
+            <result name="success">/proveedores.jsp</result>
+            <result name="input">/proveedores.jsp</result>
+            <result name="error">/proveedores.jsp</result>
+        </action>
+        
         <action name="obtenerClientePorDNI" class="Actions.ListarClientesAction" method="obtenerClienteAction">
             <result name="success">/clientes.jsp</result>
             <result name="input">/clientes.jsp</result>

@@ -37,7 +37,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: Descripcion
+                    <h1 style="size:50%; text-align: left;">Proveedores</h1>
                     </p>
                 </div>
             </section>
@@ -100,28 +100,59 @@
                                     Lista Proveedores
                                 </div>
                                 <div class="full-width panel-content">
-                                    <form action="#">
+                                    <s:form action="listarProveedores" method="POST">
+                                        <div class="mdl-list"> 
+                                            <s:action name="listarProveedores">
+                                                <%-- Mostrar cada administrador --%>
+                                                <s:iterator value="proveedores">
+                                                    <div class="mdl-list__item mdl-list__item--two-line">
+                                                        <span class="mdl-list__item-primary-content">
+                                                            <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                                            <span><s:property value="nombre" /></span>
+                                                            <span class="mdl-list__item-sub-title"><s:property value="email" /></span>
+                                                            <span class="mdl-list__item-sub-title"><s:property value="web" /></span>
+                                                        </span>
+                                                        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+                                                    </div>
+                                                    <li class="full-width divider-menu-h"></li>
+                                                    </s:iterator>
+                                                </s:action>
+                                            <input style="
+                                                   display: inline-block;
+                                                   padding: 10px 20px;
+                                                   font-size: 16px;
+                                                   font-weight: bold;
+                                                   color: white;
+                                                   background-color: rgb(63, 144, 63);
+                                                   border: none;
+                                                   border-radius: 5px;
+                                                   cursor: pointer;
+                                                   text-align: center;
+                                                   text-decoration: none;
+                                                   " 
+                                                   class="mdl-textfield__input" type="submit" id="mostrarLista" value="Pulse para mostrar lista de Proveedores">
+                                        </div>
+                                    </s:form>
+                                    <%-- Crear accion para buscar administrador--%>
+                                    <s:form action="obtenerClientePorDNI" method="POST">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchProvider">
+                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchCliente">
                                                 <i class="zmdi zmdi-search"></i>
                                             </label>
                                             <div class="mdl-textfield__expandable-holder">
-                                                <input class="mdl-textfield__input" type="text" id="searchProvider">
+                                                <input class="mdl-textfield__input" type="text" id="searchCliente" name="dni">
                                                 <label class="mdl-textfield__label"></label>
                                             </div>
+
                                         </div>
-                                    </form>
-                                    <div class="mdl-list">
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-truck mdl-list__item-avatar"></i>
-                                                <span>1. Nombre proveedor</span>
-                                                <span class="mdl-list__item-sub-title">DNI</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+                                    </s:form>
+                                    <span class="mdl-list__item-primary-content" style="display: flex; align-items: center; margin-top: 10px;">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar" style="margin-right: 10px; font-size: 24px;"></i>
+                                        <div style="flex-direction: column;">
+                                            <span style="font-weight: bold; font-size: 18px; color: #333;"><s:property value="clienteA.nombre" /></span>
+                                            <span class="mdl-list__item-sub-title" style="color: #666; font-size: 14px;"><s:property value="dni" /></span>
                                         </div>
-                                        <li class="full-width divider-menu-h"></li>
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
 
