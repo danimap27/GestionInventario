@@ -69,5 +69,11 @@
             <result name="input">/clientes.jsp</result>
             <result name="error">/clientes.jsp</result>
         </action>
+        
+        <action name="obtenerAdminPorDNI" class="Actions.ListarAdministradoresAction" method="obtenerAdminAction">
+            <result name="success">/administradores.jsp</result>
+            <result name="input">/administradores.jsp</result>
+            <result name="error">/administradores.jsp</result>
+        </action>
     </package>
 </struts>

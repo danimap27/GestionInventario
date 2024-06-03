@@ -37,7 +37,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                    <h1 style="size:50%; text-align: left;">Proveedores</h1>
+                    <h1 style="width:50%; text-align: left;">Proveedores</h1>
                     </p>
                 </div>
             </section>
