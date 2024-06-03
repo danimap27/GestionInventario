@@ -121,33 +121,41 @@
                                                     </s:iterator>
                                                 </s:action>
                                             <input style="
-                                                display: inline-block;
-                                                padding: 10px 20px;
-                                                font-size: 16px;
-                                                font-weight: bold;
-                                                color: white;
-                                                background-color: rgb(63, 144, 63);
-                                                border: none;
-                                                border-radius: 5px;
-                                                cursor: pointer;
-                                                text-align: center;
-                                                text-decoration: none;
-                                            " 
-                                            class="mdl-textfield__input" type="submit" id="mostrarLista" value="Pulse para mostrar lista de Clientes">
+                                                   display: inline-block;
+                                                   padding: 10px 20px;
+                                                   font-size: 16px;
+                                                   font-weight: bold;
+                                                   color: white;
+                                                   background-color: rgb(63, 144, 63);
+                                                   border: none;
+                                                   border-radius: 5px;
+                                                   cursor: pointer;
+                                                   text-align: center;
+                                                   text-decoration: none;
+                                                   " 
+                                                   class="mdl-textfield__input" type="submit" id="mostrarLista" value="Pulse para mostrar lista de Clientes">
                                         </div>
                                     </s:form>
                                     <%-- Crear accion para buscar administrador--%>
-                                    <s:form action="listarClientes" method="POST">
+                                    <s:form action="obtenerClientePorDNI" method="POST">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
+                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchCliente">
                                                 <i class="zmdi zmdi-search"></i>
                                             </label>
                                             <div class="mdl-textfield__expandable-holder">
-                                                <input class="mdl-textfield__input" type="text" id="searchAdmin">
+                                                <input class="mdl-textfield__input" type="text" id="searchCliente" name="dni">
                                                 <label class="mdl-textfield__label"></label>
                                             </div>
+
                                         </div>
                                     </s:form>
+                                    <span class="mdl-list__item-primary-content" style="display: flex; align-items: center; margin-top: 10px;">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar" style="margin-right: 10px; font-size: 24px;"></i>
+                                        <div style="flex-direction: column;">
+                                            <span style="font-weight: bold; font-size: 18px; color: #333;"><s:property value="clienteA.nombre" /></span>
+                                            <span class="mdl-list__item-sub-title" style="color: #666; font-size: 14px;"><s:property value="dni" /></span>
+                                        </div>
+                                    </span>
                                 </div>
                             </div>
 

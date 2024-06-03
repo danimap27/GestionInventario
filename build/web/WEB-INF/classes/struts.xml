@@ -51,5 +51,11 @@
             <result name="input">/clientes.jsp</result>
             <result name="error">/clientes.jsp</result>
         </action>
+        
+        <action name="obtenerClientePorDNI" class="Actions.ListarClientesAction" method="obtenerClienteAction">
+            <result name="success">/clientes.jsp</result>
+            <result name="input">/clientes.jsp</result>
+            <result name="error">/clientes.jsp</result>
+        </action>
     </package>
 </struts>

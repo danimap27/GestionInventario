@@ -19,11 +19,21 @@ import java.util.List;
  */
 public class ListarClientesAction extends ActionSupport {
     private List<Cliente> clientes;
+    private String dni;
+    private Cliente clienteA;
     public ListarClientesAction() {
     }
 
     public List<Cliente> getClientes() {
         return clientes;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public void setClientes(List<Cliente> clientes) {
@@ -37,6 +47,29 @@ public class ListarClientesAction extends ActionSupport {
 
         try {
             clientes = clienteDao.getAllClientes();
+            return SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ERROR;
+        } finally {
+            session.close();
+        }
+    }
+
+    public Cliente getClienteA() {
+        return clienteA;
+    }
+
+    public void setClienteA(Cliente clienteA) {
+        this.clienteA = clienteA;
+    }
+    
+    public String obtenerClienteAction() throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        ClienteDAO clienteDao = new ClienteDAO(session);
+
+        try {
+            clienteA = clienteDao.getClienteById(this.dni);
             return SUCCESS;
         } catch (Exception e) {
             e.printStackTrace();

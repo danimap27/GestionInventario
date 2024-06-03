@@ -33,7 +33,7 @@ public class ClienteDAO {
         return session.createQuery("FROM Cliente").list();
     }
 
-    public Cliente getClienteById(int dni) {
+    public Cliente getClienteById(String dni) {
         return (Cliente) session.get(Cliente.class, dni);
     }
 
