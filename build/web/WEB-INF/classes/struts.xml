@@ -15,8 +15,16 @@
             <result name="input">/categorias.jsp</result>
             <result name="error">/categorias.jsp</result>
         </action>
-        <action name="listarAdministradores" class="Actions.ListarAdministradoresAction">
+        <action name="listarAdministradores" class="com.opensymphony.xwork2.ActionSupport">
+            <result type="redirectAction">
+                <param name="actionName">listarAdministradores2</param>
+            </result>
+        </action>
+
+        <action name="listarAdministradores2" class="Actions.ListarAdministradoresAction">
             <result name="success">/administradores.jsp</result>
+            <result name="input">/administradores.jsp</result>
+            <result name="error">/administradores.jsp</result>
         </action>
         <action name="addCliente" class="Actions.addCliente">
             <result name="success">/clientes.jsp</result>

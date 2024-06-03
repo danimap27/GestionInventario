@@ -19,6 +19,10 @@ public class ListarAdministradoresAction extends ActionSupport {
         return administradores;
     }
 
+    public void setAdministradores(List<Administrador> administradores) {
+        this.administradores = administradores;
+    }
+
     @Override
     public String execute() {
         Session session = HibernateUtil.getSessionFactory().openSession();

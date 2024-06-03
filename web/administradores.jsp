@@ -13,6 +13,7 @@
         <%@include file="utils/importaciones.jsp" %>
     </head>
     <body>
+        
         <%-- Notificaciones TODO--%>
         <%@include file="utils/notificaciones.jsp" %>
         <%-- navBar --%>
@@ -118,6 +119,7 @@
                                         </div>
                                     </s:form>
                                     <div class="mdl-list">
+                                        <s:action name="listarAdministradores" var="adminAction"/>
                                         <%-- Mostrar cada administrador --%>
                                         <s:iterator value="administradores">
                                             <div class="mdl-list__item mdl-list__item--two-line">
