@@ -8,6 +8,14 @@
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <servlet>
+        <servlet-name>ContarElementosServlet</servlet-name>
+        <servlet-class>Servlets.ContarElementosServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContarElementosServlet</servlet-name>
+        <url-pattern>/ContarElementosServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

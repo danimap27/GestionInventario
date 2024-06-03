@@ -19,6 +19,7 @@
         <%-- navLat --%>
         <%@include file="utils/navLateral.jsp" %>
         <%-- pageContent --%>
+
         <section class="full-width pageContent">
             <section class="full-width text-center" style="padding: 40px 0;">
                 <h3 class="text-center tittles">MENU R&Aacute;PIDO</h3>
@@ -26,7 +27,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                2<%--<%=nAdministradores%>--%><br>
+                                <span id="contadorAdministradores" class="text-condensedLight">Cargando...</span><br>
                                 <small>Administradores</small>
                             </span>
                         </div>
@@ -37,7 +38,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                71<%--<%=nClientes%>--%><br>
+                                <span id="contadorClientes" class="text-condensedLight">Cargando...</span><br>
                                 <small>Clientes</small>
                             </span>
                         </div>
@@ -48,7 +49,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                5<%--<%=nProveedores%>--%><br>
+                                <span id="contadorProveedores" class="text-condensedLight">Cargando...</span><br>
                                 <small>Proveedores</small>
                             </span>
                         </div>
@@ -59,7 +60,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                9<%--<%=nCategorias%>--%><br>
+                                <span id="contadorCategorias" class="text-condensedLight">Cargando...</span><br>
                                 <small>Categorias</small>
                             </span>
                         </div>
@@ -70,7 +71,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                121<%--<%=nProductos%>--%><br>
+                                <span id="contadorProductos" class="text-condensedLight">Cargando...</span><br>
                                 <small>Productos</small>
                             </span>
                         </div>
@@ -81,7 +82,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                47<%--<%=nVentas%>--%><br>
+                                <span id="contadorVentas" class="text-condensedLight">Cargando...</span><br>
                                 <small>Ventas</small>
                             </span>
                         </div>
@@ -90,5 +91,26 @@
                 </a>
             </section>
         </section>
+                <script>
+    function obtenerConteo(tabla, spanId) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById(spanId).innerText = this.responseText;
+            }
+        };
+        xhttp.open("GET", "ContarElementosServlet?tabla=" + tabla, true);
+        xhttp.send();
+    }
+
+    window.onload = function() {
+        obtenerConteo("Administradores", "contadorAdministradores");
+        obtenerConteo("Clientes", "contadorClientes");
+        obtenerConteo("Proveedores", "contadorProveedores");
+        obtenerConteo("Categorias", "contadorCategorias");
+        obtenerConteo("Productos", "contadorProductos");
+        obtenerConteo("Ventas", "contadorVentas");
+    };
+</script>
     </body>
 </html>
