@@ -123,7 +123,20 @@
                                                     <li class="full-width divider-menu-h"></li>
                                                     </s:iterator>
                                                 </s:action>
-                                            <input class="mdl-textfield__input" type="submit" id="mostrarLista" value="Pulse para mostrar lista de Administradores">
+                                            <input style="
+                                                display: inline-block;
+                                                padding: 10px 20px;
+                                                font-size: 16px;
+                                                font-weight: bold;
+                                                color: white;
+                                                background-color: rgb(63, 144, 63);
+                                                border: none;
+                                                border-radius: 5px;
+                                                cursor: pointer;
+                                                text-align: center;
+                                                text-decoration: none;
+                                            " 
+                                            class="mdl-textfield__input" type="submit" id="mostrarLista" value="Pulse para mostrar lista de Administradores">
                                         </div>
                                     </s:form>
                                     <%-- Crear accion para buscar administrador--%>
@@ -149,6 +162,7 @@
     <script>
         document.getElementById('mostrarLista').addEventListener('click', function () {
             this.style.display = 'none';
+            display:none; //to hide
         });
     </script>       
 </body>
