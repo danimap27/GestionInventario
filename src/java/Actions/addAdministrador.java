@@ -23,6 +23,34 @@ public class addAdministrador extends ActionSupport {
     private String passwordAdmin;
 
     @Override
+    public void validate() {
+        if (DNIAdmin == null || DNIAdmin.trim().isEmpty()) {
+            addFieldError("DNIAdmin", "El DNI es obligatorio.");
+        }
+        if (NameAdmin == null || NameAdmin.trim().isEmpty()) {
+            addFieldError("NameAdmin", "El nombre es obligatorio.");
+        }
+        if (LastNameAdmin == null || LastNameAdmin.trim().isEmpty()) {
+            addFieldError("LastNameAdmin", "El apellido es obligatorio.");
+        }
+        if (phoneAdmin == null || phoneAdmin.trim().isEmpty()) {
+            addFieldError("phoneAdmin", "El teléfono es obligatorio.");
+        }
+        if (emailAdmin == null || emailAdmin.trim().isEmpty()) {
+            addFieldError("emailAdmin", "El correo electrónico es obligatorio.");
+        }
+        if (addressAdmin == null || addressAdmin.trim().isEmpty()) {
+            addFieldError("addressAdmin", "La dirección es obligatoria.");
+        }
+        if (UserNameAdmin == null || UserNameAdmin.trim().isEmpty()) {
+            addFieldError("UserNameAdmin", "El nombre de usuario es obligatorio.");
+        }
+        if (passwordAdmin == null || passwordAdmin.trim().isEmpty()) {
+            addFieldError("passwordAdmin", "La contraseña es obligatoria.");
+        }
+    }
+
+    @Override
     public String execute() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         AdministradorDAO dao = new AdministradorDAO(session);
@@ -40,6 +68,9 @@ public class addAdministrador extends ActionSupport {
         dao.registrarAdministrador(admin);
         return SUCCESS;
     }
+
+    // Getters y setters
+
 
     public String getDNIAdmin() {
         return DNIAdmin;

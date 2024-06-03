@@ -10,6 +10,9 @@ package Actions;
  * @author Dani
  */
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.EmailValidator;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import DAO.ClienteDAO;
 import Entidades.Cliente;
 import Entidades.HibernateUtil;
@@ -22,6 +25,30 @@ public class addCliente extends ActionSupport {
     private String addressClient1;
     private String phoneClient;
     private String emailClient;
+
+    @Override
+    public void validate() {
+        if (DNIClient == null || DNIClient.trim().isEmpty()) {
+            addFieldError("DNIClient", "El DNI del cliente es obligatorio");
+        }
+
+        if (NameClient == null || NameClient.trim().isEmpty()) {
+            addFieldError("NameClient", "El nombre del cliente es obligatorio");
+        }
+
+        if (LastNameClient == null || LastNameClient.trim().isEmpty()) {
+            addFieldError("LastNameClient", "El apellido del cliente es obligatorio");
+        }
+
+        if (addressClient1 == null || addressClient1.trim().isEmpty()) {
+            addFieldError("addressClient1", "La dirección del cliente es obligatoria");
+        }
+
+        if (phoneClient == null || phoneClient.trim().isEmpty()) {
+            addFieldError("phoneClient", "El teléfono del cliente es obligatorio");
+        }
+
+    }
 
     @Override
     public String execute() {
@@ -46,6 +73,8 @@ public class addCliente extends ActionSupport {
             session.close();
         }
     }
+
+    // Getters y Setter
 
     public String getDNIClient() {
         return DNIClient;
