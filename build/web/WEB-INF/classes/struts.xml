@@ -34,7 +34,7 @@
             </result>
         </action>
 
-        <action name="listarAdministradores2" class="Actions.ListarClientesAction">
+        <action name="listarAdministradores2" class="Actions.ListarAdministradoresAction">
             <result name="success">/administradores.jsp</result>
             <result name="input">/administradores.jsp</result>
             <result name="error">/administradores.jsp</result>
