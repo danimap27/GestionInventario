@@ -1,0 +1,23 @@
+services:
+  tomcat:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: tomcat-deploy
+    ports:
+      - "3036:8080"
+    volumes:
+      - ./_data/webapps/:/usr/local/tomcat/webapps
+      - ./_data/temp/:/usr/local/tomcat/temp
+      - ./_data/logs/:/usr/local/tomcat/logs
+    networks:
+      tomcat-net:
+        aliases:
+          - tomcat-host
+volumes:
+  _data: {}
+networks:
+  tomcat-net:
+    driver: bridge
+    ipam:
+      driver: default

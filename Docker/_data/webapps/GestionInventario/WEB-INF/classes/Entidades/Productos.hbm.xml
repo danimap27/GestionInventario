@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2024 18:31:30 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="gestioninventbd" name="Entidades.Productos" optimistic-lock="version" table="productos">
+    <id name="codigo" type="int">
+      <column name="codigo"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="Entidades.Categoria" fetch="select" name="categoria">
+      <column length="50" name="categoria_nombre"/>
+    </many-to-one>
+    <many-to-one class="Entidades.Proveedor" fetch="select" name="proveedor">
+      <column name="proveedor_id"/>
+    </many-to-one>
+    <property name="nombre" type="string">
+      <column length="50" name="nombre" not-null="true"/>
+    </property>
+    <property name="stock" type="int">
+      <column name="stock" not-null="true"/>
+    </property>
+    <property name="precioUnidad" type="big_decimal">
+      <column name="precio_unidad" not-null="true" precision="10"/>
+    </property>
+    <property name="modelo" type="string">
+      <column length="50" name="modelo"/>
+    </property>
+    <property name="marca" type="string">
+      <column length="50" name="marca"/>
+    </property>
+    <property name="otros" type="string">
+      <column length="65535" name="otros"/>
+    </property>
+    <one-to-one class="Entidades.Inventario" name="inventario"/>
+  </class>
+</hibernate-mapping>

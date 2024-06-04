@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <constant name="struts.ui.theme" value="simple"/>
+    <package name="default" extends="struts-default">
+        <action name="addAdministrador" class="Actions.addAdministrador">
+            <result name="success">/administradores.jsp</result>
+            <result name="error">/administradores.jsp</result>
+        </action>
+        <action name="addCategoria" class="Actions.addCategoria">
+            <result name="success">/categorias.jsp</result>
+            <result name="error">/categorias.jsp</result>
+        </action>
+         <action name="listarAdministradores" class="Actions.ListarAdministradoresAction">
+            <result name="success">/administradores.jsp</result>
+        </action>
+    </package>
+</struts>
