@@ -123,6 +123,11 @@
             <result name="input">/categorias.jsp</result>
             <result name="error">/categorias.jsp</result>
         </action>
+<action name="obtenerPagoMedianteID" class="Actions.ListarPagosAction" method="obtenerPagoID">
+            <result name="success">/pagos.jsp</result>
+            <result name="input">/pagos.jsp</result>
+            <result name="error">/pagos.jsp</result>
+        </action>
 
     </package>
 </struts>

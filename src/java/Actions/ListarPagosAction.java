@@ -66,4 +66,18 @@ public class ListarPagosAction extends ActionSupport {
         }
     }
     
+    public String obtenerPagoID() throws Exception {
+           Session session = HibernateUtil.getSessionFactory().openSession();
+        PagoDAO pagoDao = new PagoDAO(session);
+
+        try {
+            pagoA = pagoDao.getPagoById(this.id);
+            return SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ERROR;
+        } finally {
+            session.close();
+        }
+    }
 }
