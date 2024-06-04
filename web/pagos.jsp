@@ -82,46 +82,59 @@
                                 <div class="full-width panel-tittle bg-success text-center tittles">
                                     List Payments
                                 </div>
-                                <div class="full-width panel-content">
-                                    <form action="#">
+                               <div class="full-width panel-content">
+                                    <s:form action="listarPagos" method="POST">
+                                        <div class="mdl-list"> 
+                                            <s:action name="listarPagos">
+                                                <%-- Mostrar cada pago --%>
+                                                <s:iterator value="pagos">
+                                                    <div class="mdl-list__item mdl-list__item--two-line">
+                                                        <span class="mdl-list__item-primary-content">
+                                                            <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                                            <span><s:property value="nombre" /></span>
+                                                            <span class="mdl-list__item-sub-title"><s:property value="descripcion" /></span>
+                                                            <span class="mdl-list__item-sub-title"><s:property value="id" /></span>
+                                                        </span>
+                                                        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+                                                    </div>
+                                                    <li class="full-width divider-menu-h"></li>
+                                                    </s:iterator>
+                                                </s:action>
+                                            <input style="
+                                                display: inline-block;
+                                                padding: 10px 20px;
+                                                font-size: 16px;
+                                                font-weight: bold;
+                                                color: white;
+                                                background-color: rgb(63, 144, 63);
+                                                border: none;
+                                                border-radius: 5px;
+                                                cursor: pointer;
+                                                text-align: center;
+                                                text-decoration: none;
+                                            " 
+                                            class="mdl-textfield__input" type="submit" id="mostrarLista" value="Pulse para mostrar lista de Pagos">
+                                        </div>
+                                    </s:form>
+                                    <%-- Crear accion para buscar administrador--%>
+                                    <s:form action="obtenerCategoriaPorNombre" method="POST">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchPayment">
+                                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchCate">
                                                 <i class="zmdi zmdi-search"></i>
                                             </label>
                                             <div class="mdl-textfield__expandable-holder">
-                                                <input class="mdl-textfield__input" type="text" id="searchPayment">
+                                                <input class="mdl-textfield__input" type="text" id="searchCate" name="nombre">
                                                 <label class="mdl-textfield__label"></label>
                                             </div>
                                         </div>
-                                    </form>
-                                    <div class="mdl-list">
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-card mdl-list__item-avatar"></i>
-                                                <span>1. Payment method</span>
-                                                <span class="mdl-list__item-sub-title">Sub tittle</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+                                    </s:form>
+                                    <span class="mdl-list__item-primary-content" style="display: flex; align-items: center; margin-top: 10px;">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar" style="margin-right: 10px; font-size: 24px;"></i>
+                                        <div style="flex-direction: column;">
+                                            <span style="font-weight: bold; font-size: 18px; color: #333;"><s:property value="categoriaA.nombre" /></span>
+                                            <span class="mdl-list__item-sub-title" style="color: #666; font-size: 14px;"><s:property value="categoriaA.descripcion" /></span>
                                         </div>
-                                        <li class="full-width divider-menu-h"></li>
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-card mdl-list__item-avatar"></i>
-                                                <span>2. Payment method</span>
-                                                <span class="mdl-list__item-sub-title">Sub tittle</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                        </div>
-                                        <li class="full-width divider-menu-h"></li>
-                                        <div class="mdl-list__item mdl-list__item--two-line">
-                                            <span class="mdl-list__item-primary-content">
-                                                <i class="zmdi zmdi-card mdl-list__item-avatar"></i>
-                                                <span>3. Payment method</span>
-                                                <span class="mdl-list__item-sub-title">Sub tittle</span>
-                                            </span>
-                                            <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-                                        </div>
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
                         </div>

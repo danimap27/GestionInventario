@@ -89,6 +89,18 @@
             <result name="error">/categorias.jsp</result>
         </action>
         
+         <action name="listarPagos" class="com.opensymphony.xwork2.ActionSupport">
+            <result type="redirectAction">
+                <param name="actionName">listarPagos2</param>
+            </result>
+        </action>
+
+        <action name="listarPagos2" class="Actions.ListarPagosAction">
+            <result name="success">/pagos.jsp</result>
+            <result name="input">/pagos.jsp</result>
+            <result name="error">/pagos.jsp</result>
+        </action>
+        
         <action name="obtenerClientePorDNI" class="Actions.ListarClientesAction" method="obtenerClienteAction">
             <result name="success">/clientes.jsp</result>
             <result name="input">/clientes.jsp</result>
