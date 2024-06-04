@@ -19,24 +19,29 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
+import DAO.VentaDAO;
+import Entidades.HibernateUtil;
+import org.hibernate.Session;
 
 @WebServlet("/generatePdfVentas")
 public class GeneratePdfVentasServlet extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Venta> ventas = null;
 
+        Session session = HibernateUtil.getSessionFactory().openSession();
         // meter el dao para obtener las ventas
+        VentaDAO dao = VentaDAO(session);
+        ventas = dao.getAllVentas();
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "attachment; filename=\"ventas.pdf\"");
 
@@ -52,7 +57,7 @@ public class GeneratePdfVentasServlet extends HttpServlet {
 
             document.add(new Paragraph(" ")); // Añadir espacio
 
-            PdfPTable table = new PdfPTable(4); // Número de columnas en la tabla
+            PdfPTable table = new PdfPTable(4); // Numero de columnas en la tabla
             table.setWidthPercentage(100);
             table.setSpacingBefore(10f);
             table.setSpacingAfter(10f);
@@ -74,7 +79,7 @@ public class GeneratePdfVentasServlet extends HttpServlet {
     }
 
     private void addTableHeader(PdfPTable table) {
-        Stream.of("Fecha", "Cliente", "Pago", "Total").forEach(columnTitle -> {
+        Stream.of("Id", "Cliente", "Pago", "Total").forEach(columnTitle -> {
             PdfPCell header = new PdfPCell();
             header.setPhrase(new Phrase(columnTitle));
             table.addCell(header);
@@ -86,6 +91,11 @@ public class GeneratePdfVentasServlet extends HttpServlet {
         table.addCell(venta.getCliente().getNombre());
         table.addCell(venta.getPago().getNombre());
         table.addCell(venta.getTotal().toString());
+    }
+
+    private VentaDAO VentaDAO(Session session) {
+        VentaDAO dao = VentaDAO(session);
+        return dao;
     }
 
 }

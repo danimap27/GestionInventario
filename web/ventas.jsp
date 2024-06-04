@@ -60,7 +60,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <form action="generatePdfVentas" method="get">
+                    <form action="GeneratePdfVentasServlet" method="get">
                         <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
                             Descargar PDF
                         </button>

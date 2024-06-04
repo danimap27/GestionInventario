@@ -16,6 +16,14 @@
         <servlet-name>ContarElementosServlet</servlet-name>
         <url-pattern>/ContarElementosServlet</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <servlet-name>GeneratePdfVentasServlet</servlet-name>
+        <servlet-class>Servlets.GeneratePdfVentasServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GeneratePdfVentasServlet</servlet-name>
+        <url-pattern>/GeneratePdfVentasServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
