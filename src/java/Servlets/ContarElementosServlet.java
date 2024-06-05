@@ -23,6 +23,7 @@ public class ContarElementosServlet extends HttpServlet {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
             long count = new DAOGenerico(session).contarElementosTabla(tabla);
+            request.setAttribute("tablaContador", count);
             response.setContentType("text/plain");
             PrintWriter out = response.getWriter();
             out.print(count);

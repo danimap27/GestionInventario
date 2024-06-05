@@ -8,6 +8,7 @@
     <package name="default" extends="struts-default">
         <action name="addAdministrador" class="Actions.addAdministrador">
             <result name="success">/administradores.jsp</result>
+            <result name="input">/administradores.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
         <action name="addCategoria" class="Actions.addCategoria">

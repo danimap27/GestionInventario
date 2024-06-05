@@ -101,15 +101,16 @@
         };
         xhttp.open("GET", "ContarElementosServlet?tabla=" + tabla, true);
         xhttp.send();
+        
     }
 
     window.onload = function() {
-        obtenerConteo("Administradores", "contadorAdministradores");
-        obtenerConteo("Clientes", "contadorClientes");
-        obtenerConteo("Proveedores", "contadorProveedores");
-        obtenerConteo("Categorias", "contadorCategorias");
-        obtenerConteo("Productos", "contadorProductos");
-        obtenerConteo("Ventas", "contadorVentas");
+        obtenerConteo("Administrador", "contadorAdministradores");
+        obtenerConteo("Cliente", "contadorClientes");
+        obtenerConteo("Proveedor", "contadorProveedores");
+        obtenerConteo("Categoria", "contadorCategorias");
+        obtenerConteo("Producto", "contadorProductos");
+        obtenerConteo("Venta", "contadorVentas");
     };
 </script>
     </body>

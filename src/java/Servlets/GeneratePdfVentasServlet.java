@@ -36,6 +36,7 @@ public class GeneratePdfVentasServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("hola");
         List<Venta> ventas = null;
 
         Session session = HibernateUtil.getSessionFactory().openSession();
