@@ -26,7 +26,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        COMPA&Ntilde;IAS
+                        TODO: descripcion
                     </p>
                 </div>
             </section>

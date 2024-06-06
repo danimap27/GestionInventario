@@ -37,7 +37,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-PAGOS			</p>
+                        TODO: Descripcion				</p>
                 </div>
             </section>
             <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">

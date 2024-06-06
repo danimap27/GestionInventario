@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Inventario</title>
+        <title>Administradores</title>
         <%@include file="utils/importaciones.jsp"%>
     </head>
     <body>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-INVENTARIO				
+                        TODO: descripcion				
                     </p>
                 </div>
             </section>

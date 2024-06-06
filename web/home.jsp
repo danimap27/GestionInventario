@@ -27,7 +27,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                <span id="contadorAdministradores" class="text-condensedLight">2</span><br>
+                                <span id="contadorAdministradores" class="text-condensedLight">Cargando...</span><br>
                                 <small>Administradores</small>
                             </span>
                         </div>
@@ -38,7 +38,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                <span id="contadorClientes" class="text-condensedLight">4</span><br>
+                                <span id="contadorClientes" class="text-condensedLight">Cargando...</span><br>
                                 <small>Clientes</small>
                             </span>
                         </div>
@@ -49,7 +49,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                <span id="contadorProveedores" class="text-condensedLight">2</span><br>
+                                <span id="contadorProveedores" class="text-condensedLight">Cargando...</span><br>
                                 <small>Proveedores</small>
                             </span>
                         </div>
@@ -60,7 +60,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                <span id="contadorCategorias" class="text-condensedLight">3</span><br>
+                                <span id="contadorCategorias" class="text-condensedLight">Cargando...</span><br>
                                 <small>Categorias</small>
                             </span>
                         </div>
@@ -71,7 +71,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                <span id="contadorProductos" class="text-condensedLight">12</span><br>
+                                <span id="contadorProductos" class="text-condensedLight">Cargando...</span><br>
                                 <small>Productos</small>
                             </span>
                         </div>
@@ -82,7 +82,7 @@
                     <article class="full-width tile">
                         <div class="tile-text">
                             <span class="text-condensedLight">
-                                <span id="contadorVentas" class="text-condensedLight">4</span><br>
+                                <span id="contadorVentas" class="text-condensedLight">Cargando...</span><br>
                                 <small>Ventas</small>
                             </span>
                         </div>

@@ -27,7 +27,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-CATEGORIAS
+                        TODO: descripción
                     </p>
                 </div>
             </section>

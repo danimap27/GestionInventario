@@ -28,7 +28,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-ADMINISTRADORES
+                        TODO: descripción
                     </p>
                 </div>
             </section>

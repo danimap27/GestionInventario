@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Actions;
+package Servlets;
 
-import com.opensymphony.xwork2.ActionSupport;
+/**
+ *
+ * @author Dani
+ */
+import Entidades.Venta;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
@@ -15,25 +19,30 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import DAO.VentaDAO;
-import Entidades.HibernateUtil;
-import Entidades.Venta;
-import org.apache.struts2.ServletActionContext;
-import org.hibernate.Session;
-
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Stream;
+import DAO.VentaDAO;
+import Entidades.HibernateUtil;
+import org.hibernate.Session;
 
-public class GenerarPDF extends ActionSupport {
-    
-    public String execute() throws Exception {
+@WebServlet("/generatePdfVentas")
+public class GeneratePdfVentasServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("hola");
+        List<Venta> ventas = null;
+
         Session session = HibernateUtil.getSessionFactory().openSession();
-        VentaDAO dao = new VentaDAO(session);
-        List<Venta> ventas = dao.getAllVentas();
-        
-        HttpServletResponse response = ServletActionContext.getResponse();
+        // meter el dao para obtener las ventas
+        VentaDAO dao = VentaDAO(session);
+        ventas = dao.getAllVentas();
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "attachment; filename=\"ventas.pdf\"");
 
@@ -47,29 +56,29 @@ public class GenerarPDF extends ActionSupport {
             title.setAlignment(Element.ALIGN_CENTER);
             document.add(title);
 
-            document.add(new Paragraph(" "));
+            document.add(new Paragraph(" ")); // Añadir espacio
 
-            PdfPTable table = new PdfPTable(4);
+            PdfPTable table = new PdfPTable(4); // Numero de columnas en la tabla
             table.setWidthPercentage(100);
             table.setSpacingBefore(10f);
             table.setSpacingAfter(10f);
+
+            // Añadir cabeceras de la tabla
             addTableHeader(table);
 
+            // Añadir filas de la tabla
             for (Venta venta : ventas) {
                 addRows(table, venta);
             }
 
             document.add(table);
-        } catch (DocumentException | IOException e) {
+        } catch (DocumentException e) {
             e.printStackTrace();
-            return ERROR;
         } finally {
             document.close();
-            session.close();
         }
-        return SUCCESS;
     }
-    
+
     private void addTableHeader(PdfPTable table) {
         Stream.of("Id", "Cliente", "Pago", "Total").forEach(columnTitle -> {
             PdfPCell header = new PdfPCell();
@@ -84,4 +93,10 @@ public class GenerarPDF extends ActionSupport {
         table.addCell(venta.getPago().getNombre());
         table.addCell(venta.getTotal().toString());
     }
+
+    private VentaDAO VentaDAO(Session session) {
+        VentaDAO dao = VentaDAO(session);
+        return dao;
+    }
+
 }
