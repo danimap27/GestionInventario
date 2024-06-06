@@ -90,7 +90,7 @@
             <result name="error">/categorias.jsp</result>
         </action>
         
-         <action name="listarPagos" class="com.opensymphony.xwork2.ActionSupport">
+        <action name="listarPagos" class="com.opensymphony.xwork2.ActionSupport">
             <result type="redirectAction">
                 <param name="actionName">listarPagos2</param>
             </result>
@@ -124,11 +124,19 @@
             <result name="input">/categorias.jsp</result>
             <result name="error">/categorias.jsp</result>
         </action>
-<action name="obtenerPagoMedianteID" class="Actions.ListarPagosAction" method="obtenerPagoID">
+        <action name="obtenerPagoMedianteID" class="Actions.ListarPagosAction" method="obtenerPagoID">
             <result name="success">/pagos.jsp</result>
             <result name="input">/pagos.jsp</result>
             <result name="error">/pagos.jsp</result>
         </action>
-
+        <action name="loginAction" class="Actions.LoginAction">
+            <result name="success">/home.jsp</result>
+            <result name="input">/login.jsp</result>
+            <result name="error">/login.jsp</result>
+        </action>
+        <action name="generarPDF" class="actions.GenerarPDFAction">
+            <result name="success">/ventas.jsp</result>
+            <result name="error">/ventas.jsp</result>
+        </action>
     </package>
 </struts>

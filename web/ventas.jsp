@@ -3,7 +3,7 @@
     Created on : 12-may-2024, 20:27:09
     Author     : Dani
 --%>
-
+<%@taglib prefix="s" uri="/struts-tags"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: Descripcion
+VENTAS
                     </p>
                 </div>
             </section>
@@ -60,11 +60,11 @@
                             </tr>
                         </tbody>
                     </table>
-                    <form action="GeneratePdfVentasServlet" method="get">
+                    <s:form action="GenerarPDF" method="get">
                         <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
                             Descargar PDF
                         </button>
-                    </form>
+                    </s:form>
                 </div>
             </div>
         </section>

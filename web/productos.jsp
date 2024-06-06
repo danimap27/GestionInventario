@@ -37,7 +37,7 @@
                 </div>
                 <div class="full-width header-well-text">
                     <p class="text-condensedLight">
-                        TODO: Descripcion
+PRODUCTOS
                     </p>
                 </div>
             </section>

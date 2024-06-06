@@ -17,7 +17,7 @@
                 <i class="zmdi zmdi-account-circle"></i>
             </p>
             <p class="text-center text-condensedLight">Entrar en tu cuenta</p>
-            <s:form action="home.jsp" method="POST">
+            <s:form action="loginAction" method="POST">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <s:textfield cssClass="mdl-textfield__input" key="userName" id="userName" name="userName" />
                     <label class="mdl-textfield__label" for="userName">Usuario</label>
